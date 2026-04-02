@@ -3,196 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rounak Arora</title>
 
+<title>Rounak Arora | Digital Marketing Expert</title>
+
+<!-- SEO -->
+<meta name="description" content="Rounak Arora - Digital Marketing Expert in Jaipur. Instagram Growth, Ads & SEO services to grow your business online.">
+<meta name="keywords" content="Digital Marketing Jaipur, Instagram Growth, Ads Expert, SEO Jaipur">
+<meta name="author" content="Rounak Arora">
+
+<!-- AOS Animation -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<!-- Particles -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 <style>
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: black;
   color: white;
+  overflow-x: hidden;
 }
 
-/* LOADER */
-#loader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: black;
-  color: gold;
+/* Navbar */
+nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  z-index: 9999;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-/* PARTICLES */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+nav h2 {
+  color: gold;
 }
 
-/* CURSOR */
-.cursor {
-  position: fixed;
-  width: 15px;
-  height: 15px;
-  background: gold;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
 }
 
-/* HERO */
+/* Hero */
 .hero {
   text-align: center;
   padding: 120px 20px;
+  position: relative;
 }
 
 h1 {
   font-size: 42px;
-  background: linear-gradient(90deg, gold, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-p { color: #aaa; }
+.highlight {
+  color: gold;
+  text-shadow: 0 0 15px gold;
+}
 
-/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 20px;
-  padding: 12px 28px;
-  border-radius: 30px;
+  padding: 12px 25px;
   border: 1px solid gold;
   color: gold;
+  border-radius: 25px;
   text-decoration: none;
-  transition: 0.3s;
 }
 
 .btn:hover {
   background: gold;
   color: black;
-  box-shadow: 0 0 25px gold, 0 0 60px gold;
-  transform: scale(1.08);
+  box-shadow: 0 0 20px gold;
 }
 
-/* SECTION */
+/* Sections */
 section {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
-/* CARDS */
-.service-box,
-.portfolio-box,
-.testimonial {
-  backdrop-filter: blur(10px);
-  border: 1px solid #222;
-  padding: 20px;
+/* Box */
+.box {
+  border: 1px solid #333;
   margin: 15px;
-  border-radius: 20px;
-  transition: 0.4s;
+  padding: 20px;
+  border-radius: 15px;
 }
 
-.service-box:hover,
-.portfolio-box:hover {
+.box:hover {
   border-color: gold;
   box-shadow: 0 0 20px gold;
-  transform: translateY(-10px) scale(1.02);
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
+/* WhatsApp */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
 }
+
+/* Particles */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="loader">Loading...</div>
 <div id="particles-js"></div>
-<div class="cursor"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>Rounak</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero" data-aos="fade-up">
-  <h1 id="typing"></h1>
+  <h1>
+    I Help <span class="highlight">Businesses Grow Online 🚀</span>
+  </h1>
   <p>Digital Marketing | Instagram Growth | Ads</p>
-  <a href="https://wa.me/917821857020" class="btn">Start Growing 🚀</a>
+
+  <a href="https://wa.me/917821857020" class="btn">
+    Get Free Consultation 🚀
+  </a>
 </section>
 
 <!-- SERVICES -->
-<section data-aos="fade-up">
+<section id="services" data-aos="fade-up">
   <h2>Services</h2>
 
-  <div class="service-box" data-aos="zoom-in">
+  <div class="box" data-aos="zoom-in">
     <h3>Instagram Growth</h3>
     <p>Grow your page with real strategy</p>
   </div>
 
-  <div class="service-box" data-aos="zoom-in">
+  <div class="box" data-aos="zoom-in">
     <h3>Ads Management</h3>
     <p>Get more leads & customers</p>
   </div>
 
-  <div class="service-box" data-aos="zoom-in">
+  <div class="box" data-aos="zoom-in">
     <h3>Content Strategy</h3>
     <p>High engagement content plan</p>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section data-aos="fade-up">
-  <h2>My Work</h2>
+<!-- RESULTS -->
+<section id="work" data-aos="fade-up">
+  <h2>Results</h2>
 
-  <div class="portfolio-box" data-aos="zoom-in">
-    <h3>26K+ Followers Growth 🚀</h3>
+  <div class="box">
+    <h3>26K+ Followers Growth</h3>
   </div>
 
-  <div class="portfolio-box" data-aos="zoom-in">
-    <h3>7.8M+ Reach 📈</h3>
+  <div class="box">
+    <h3>7.8M+ Reels Reach</h3>
   </div>
 
-</section>
-
-<!-- TESTIMONIAL -->
-<section data-aos="fade-up">
-  <h2>Testimonials</h2>
-
-  <div class="testimonial" data-aos="fade-right">
-    Amazing results, highly recommended 🚀
+  <div class="box">
+    <h3>10+ Businesses Helped</h3>
   </div>
-
-  <div class="testimonial" data-aos="fade-left">
-    Helped my business grow fast 🔥
-  </div>
-
 </section>
 
 <!-- CONTACT -->
-<section data-aos="fade-up">
+<section id="contact" data-aos="fade-up">
   <h2>Contact</h2>
   <a href="https://wa.me/917821857020" class="btn">Chat on WhatsApp</a>
 </section>
 
-<footer>
+<!-- FOOTER -->
+<footer style="text-align:center;padding:20px;color:gray;">
   ©️ 2026 Rounak Arora
 </footer>
 
+<!-- WhatsApp Floating -->
+<a href="https://wa.me/917821857020" class="whatsapp">💬</a>
+
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-AOS.init({ duration: 1000, once: true });
+AOS.init();
 </script>
 
 <script>
@@ -204,32 +211,6 @@ particlesJS("particles-js", {
     line_linked: { enable: true, color: "#FFD700" }
   }
 });
-</script>
-
-<script>
-document.addEventListener("mousemove", e => {
-  document.querySelector(".cursor").style.top = e.clientY + "px";
-  document.querySelector(".cursor").style.left = e.clientX + "px";
-});
-</script>
-
-<script>
-window.addEventListener("load", () => {
-  document.getElementById("loader").style.display = "none";
-});
-</script>
-
-<script>
-let text = "I Help Brands Grow Online 🚀";
-let i = 0;
-function type() {
-  if (i < text.length) {
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 50);
-  }
-}
-type();
 </script>
 
 </body>
