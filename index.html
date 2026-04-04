@@ -15,14 +15,26 @@ html{scroll-behavior:smooth;}
 
 /* LOADER */
 #loader{
-position:fixed;width:100%;height:100vh;
-background:#000;display:flex;justify-content:center;align-items:center;
+position:fixed;
+width:100%;
+height:100vh;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
 z-index:9999;
 }
+#loader h1{color:#00ffae;}
 
 /* CURSOR */
-.cursor{width:10px;height:10px;background:#00ffae;border-radius:50%;position:fixed;pointer-events:none;}
-.cursor-follower{width:30px;height:30px;border:1px solid #00ffae;border-radius:50%;position:fixed;pointer-events:none;}
+.cursor{
+width:10px;height:10px;background:#00ffae;
+border-radius:50%;position:fixed;pointer-events:none;z-index:9999;
+}
+.cursor-follower{
+width:30px;height:30px;border:1px solid #00ffae;
+border-radius:50%;position:fixed;pointer-events:none;z-index:9999;
+}
 
 /* NAV */
 .navbar{display:flex;justify-content:space-between;padding:20px 10%;}
@@ -38,22 +50,28 @@ backdrop-filter:blur(10px);
 .hero h1{font-size:48px;}
 .gradient{
 background:linear-gradient(90deg,#00ffae,#00c3ff);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
+
 .subtext{color:#aaa;margin-top:10px;}
 
 .btn{
 display:inline-block;margin-top:20px;
 background:#00ffae;color:black;
-padding:12px 25px;border-radius:30px;text-decoration:none;
-transition:0.3s;
+padding:12px 25px;border-radius:30px;
+text-decoration:none;transition:0.3s;
 }
-.btn:hover{transform:scale(1.05);box-shadow:0 0 20px #00ffae;}
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00ffae;
+}
 
 /* SECTION */
 .section{padding:80px 10%;text-align:center;}
 .dark{background:#1a1a1a;}
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -73,26 +91,30 @@ transform:translateY(-10px) scale(1.03);
 box-shadow:0 0 20px rgba(0,255,174,0.3);
 }
 
-/* IMAGE */
-.profile{
-width:120px;border-radius:50%;margin-top:20px;
+/* SCROLL ANIMATION */
+.reveal{
+opacity:0;transform:translateY(40px);
+transition:all 0.6s ease;
+}
+.reveal.active{
+opacity:1;transform:translateY(0);
 }
 
-/* SCROLL */
-.reveal{opacity:0;transform:translateY(40px);transition:0.6s;}
-.reveal.active{opacity:1;transform:translateY(0);}
-
+/* FOOTER */
 footer{text-align:center;padding:20px;background:#111;}
 </style>
 </head>
 
 <body>
 
+<!-- LOADER -->
 <div id="loader"><h1>Loading...</h1></div>
+
+<!-- CURSOR -->
 <div class="cursor"></div>
 <div class="cursor-follower"></div>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav class="navbar">
 <div class="logo">Rounak.</div>
 <a href="https://wa.me/917821857020" class="cta">Free Audit</a>
@@ -101,10 +123,12 @@ footer{text-align:center;padding:20px;background:#111;}
 <!-- HERO -->
 <section class="hero">
 <h1>
-Helping Brands Generate Leads & Revenue<br>
-<span class="gradient">Not Just Likes & Views.</span>
+I Don't Just Market Brands<br>
+I Make Them <span class="gradient">Impossible to Ignore.</span>
 </h1>
+
 <p class="subtext"><span id="typing"></span></p>
+
 <a href="https://wa.me/917821857020" class="btn">Get Free Audit 🚀</a>
 
 <div class="subtext">
@@ -114,22 +138,13 @@ Helping Brands Generate Leads & Revenue<br>
 </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section reveal">
-<h2>About Me</h2>
-<img src="https://via.placeholder.com/150" class="profile">
-<p class="subtext">
-Hi, I'm Rounak — Digital Marketing Specialist helping brands scale with performance marketing.
-</p>
-</section>
-
 <!-- SERVICES -->
 <section class="section">
 <h2>Services</h2>
 <div class="grid">
-<div class="card reveal">Instagram Growth<br>₹8K/month</div>
-<div class="card reveal">Meta Ads Management</div>
-<div class="card reveal">SEO Optimization</div>
+<div class="card reveal">Instagram Growth</div>
+<div class="card reveal">Meta Ads</div>
+<div class="card reveal">SEO</div>
 </div>
 </section>
 
@@ -153,33 +168,29 @@ Hi, I'm Rounak — Digital Marketing Specialist helping brands scale with perfor
 </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section dark">
-<h2>Client Reviews</h2>
-<div class="grid">
-<div class="card reveal">"Got 3X leads in 45 days" — Jaipur Client</div>
-<div class="card reveal">"Best ROI I've seen" — D2C Brand</div>
-<div class="card reveal">"Helped me scale fast" — Fitness Coach</div>
-</div>
-</section>
-
 <!-- CONTACT -->
-<section class="section">
+<section class="section dark">
 <h2>Let's Grow Your Brand 🚀</h2>
 <a href="https://wa.me/917821857020" class="btn">Chat on WhatsApp</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
 <p>©️ 2026 Rounak Arora</p>
 </footer>
 
+<!-- SCRIPT -->
 <script>
-// loader
-window.addEventListener("load",()=>{document.getElementById("loader").style.display="none";});
 
-// cursor
+/* LOADER */
+window.addEventListener("load",()=>{
+document.getElementById("loader").style.display="none";
+});
+
+/* CURSOR */
 let cursor=document.querySelector(".cursor");
 let follower=document.querySelector(".cursor-follower");
+
 document.addEventListener("mousemove",(e)=>{
 cursor.style.left=e.clientX+"px";
 cursor.style.top=e.clientY+"px";
@@ -187,24 +198,29 @@ follower.style.left=e.clientX-10+"px";
 follower.style.top=e.clientY-10+"px";
 });
 
-// typing
+/* TYPING */
 let text="Scale • Dominate • Convert 🚀";
 let i=0;
 function type(){
 if(i<text.length){
 document.getElementById("typing").innerHTML+=text.charAt(i);
-i++;setTimeout(type,50);
+i++;
+setTimeout(type,50);
 }}
 type();
 
-// scroll
+/* SCROLL ANIMATION */
 window.addEventListener("scroll",()=>{
-document.querySelectorAll(".reveal").forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){
-el.classList.add("active");
+let reveals=document.querySelectorAll(".reveal");
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+if(elementTop<windowHeight-100){
+reveals[i].classList.add("active");
+}
 }
 });
-});
+
 </script>
 
 </body>
