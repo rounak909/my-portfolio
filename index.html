@@ -11,31 +11,34 @@
 
 <body>
 
-<!-- Loader -->
-<div id="loader">
-  <h1>Loading...</h1>
-</div>
-
-<div class="bg"></div>
 <div class="cursor"></div>
+<div class="particles"></div>
 
-<nav>
+<nav class="nav">
   <h2>Rounak.</h2>
-  <a href="#" class="btn">Free Audit 🚀</a>
+  <a href="https://wa.me/917821857020" class="btn">Free Audit 🚀</a>
 </nav>
 
-<section class="hero">
+<section class="hero reveal">
   <h1>
-    I Don't Just Market Brands <br>
-    I Make Them <span class="gradient">Impossible to Ignore 🚀</span>
+    I Scale Brands With <br>
+    <span class="gradient" id="typing"></span>
   </h1>
 
-  <p class="subtext">Helping brands grow with performance marketing 🚀</p>
+  <p class="subtext">Ads • Content • Growth Strategy</p>
 
-  <a href="#" class="btn">Get Free Audit 🚀</a>
+  <a href="https://wa.me/917821857020" class="btn">Get Free Strategy Call</a>
 </section>
 
-<!-- Services -->
+<section class="section reveal">
+  <h2>Results</h2>
+  <div class="grid">
+    <div class="card">26K+ Followers</div>
+    <div class="card">78L+ Reach</div>
+    <div class="card">10+ Brands</div>
+  </div>
+</section>
+
 <section class="section reveal">
   <h2>Services</h2>
   <div class="grid">
@@ -45,54 +48,26 @@
   </div>
 </section>
 
-<!-- Portfolio -->
 <section class="section reveal">
   <h2>Portfolio</h2>
   <div class="grid">
-    <div class="card">Client A - 10K Growth</div>
-    <div class="card">Client B - ₹1L Revenue</div>
-    <div class="card">Client C - Ads Scaling</div>
+    <div class="card">Client Growth</div>
+    <div class="card">Ad Scaling</div>
+    <div class="card">Brand Build</div>
   </div>
 </section>
 
-<!-- Results -->
 <section class="section reveal">
-  <h2>Results</h2>
-  <div class="grid">
-    <div class="card counter" data-target="15000">0</div>
-    <div class="card counter" data-target="100000">0</div>
-    <div class="card">5X Growth</div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="section reveal">
-  <h2>Testimonials</h2>
-  <div class="grid">
-    <div class="card">"Amazing results!" ⭐⭐⭐⭐⭐</div>
-    <div class="card">"Best marketer 🔥"</div>
-    <div class="card">"Highly recommended 🚀"</div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section reveal">
-  <h2>Let’s Grow Your Brand 🚀</h2>
-  <a href="https://wa.me/917821857020" class="btn">Chat on WhatsApp</a>
+  <h2>Let’s Work Together 🚀</h2>
+  <a href="https://wa.me/917821857020" class="btn">Chat Now</a>
 </section>
 
 <a href="https://wa.me/917821857020" class="whatsapp">💬</a>
 
 <script>
-// Loader
-window.onload = () => {
-  document.getElementById("loader").style.display = "none";
-};
-
 // Scroll animation
-const reveals = document.querySelectorAll(".reveal");
-window.addEventListener("scroll", () => {
-  reveals.forEach((el) => {
+document.addEventListener("scroll", () => {
+  document.querySelectorAll(".reveal").forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
       el.classList.add("active");
     }
@@ -106,34 +81,26 @@ document.addEventListener("mousemove", e => {
   cursor.style.top = e.clientY + "px";
 });
 
-// 3D cards
+// Typing animation
+let text = "Performance Marketing 🚀";
+let i = 0;
+function type(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 40);
+  }
+}
+type();
+
+// 3D tilt
 document.querySelectorAll(".card").forEach(card => {
   card.addEventListener("mousemove", e => {
-    let x = e.offsetX;
-    let y = e.offsetY;
-    card.style.transform = `rotateX(${y/10}deg) rotateY(${x/10}deg) scale(1.05)`;
+    card.style.transform = `rotateX(${e.offsetY/10}deg) rotateY(${e.offsetX/10}deg) scale(1.05)`;
   });
   card.addEventListener("mouseleave", () => {
     card.style.transform = "rotateX(0) rotateY(0)";
   });
-});
-
-// Counter animation
-const counters = document.querySelectorAll(".counter");
-counters.forEach(counter => {
-  let update = () => {
-    let target = +counter.getAttribute("data-target");
-    let count = +counter.innerText;
-    let speed = target / 100;
-
-    if (count < target) {
-      counter.innerText = Math.ceil(count + speed);
-      setTimeout(update, 30);
-    } else {
-      counter.innerText = target;
-    }
-  };
-  update();
 });
 </script>
 
