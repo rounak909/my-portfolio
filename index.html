@@ -30,9 +30,8 @@
   <a href="#" class="btn">Get Free Audit 🚀</a>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <h2>Services</h2>
-
   <div class="grid">
     <div class="card">Instagram Growth</div>
     <div class="card">Meta Ads</div>
@@ -40,9 +39,8 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <h2>Process</h2>
-
   <div class="grid">
     <div class="card">Audit</div>
     <div class="card">Strategy</div>
@@ -50,9 +48,8 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <h2>Results</h2>
-
   <div class="grid">
     <div class="card">2K → 15K Followers</div>
     <div class="card">₹30K → ₹1.5L Revenue</div>
@@ -60,10 +57,26 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <h2>Let’s Grow Your Brand 🚀</h2>
   <a href="https://wa.me/917821857020" class="btn">Chat on WhatsApp</a>
 </section>
+
+<script>
+// Scroll animation
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
