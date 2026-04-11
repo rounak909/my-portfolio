@@ -1,247 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Modern freelancer website for website design, Google Ads, and Instagram growth. Get more leads and clients." />
-  <title>Freelancer Portfolio | Modern Growth Website</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rounak Arora | Growth Agency</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
-  <div class="loader" id="loader">
-    <div class="loader-box">
-      <div class="loader-logo">Freelancer<span>.</span></div>
-      <div class="loader-bar">
-        <div class="loader-progress" id="loaderProgress"></div>
-      </div>
-      <p>Loading...</p>
-    </div>
-  </div>
-  <a href="https://wa.me/917821857020?text=Hi%2C%20I%20want%20to%20discuss%20my%20project."
-     class="whatsapp-float"
-     target="_blank"
-     rel="noopener"
-     aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <header class="navbar">
-    <div class="container nav-wrap">
-      <a href="#home" class="logo">Freelancer<span>.</span></a>
-      <nav class="nav-menu" id="navMenu">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="#contact" class="nav-cta">Get Started</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-content reveal">
-        <span class="badge">Available for new projects</span>
-        <h1>Modern websites and growth strategies that bring clients.</h1>
-        <p>
-          I help businesses build clean, high-converting websites and run digital marketing that generates real leads.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">
-            Get Started <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="https://wa.me/917821857020?text=Hi%2C%20I%20want%20a%20free%20consultation."
-             class="btn btn-secondary"
-             target="_blank"
-             rel="noopener">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div>
-            <strong>10+</strong>
-            <span>Brands Helped</span>
-          </div>
-          <div>
-            <strong>3X</strong>
-            <span>Better Leads</span>
-          </div>
-          <div>
-            <strong>90%</strong>
-            <span>Client Satisfaction</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-card reveal">
-        <div class="mini-card">
-          <i class="fas fa-chart-line"></i>
-          <h3>Lead Growth</h3>
-          <p>Smart design + marketing = more inquiries.</p>
-        </div>
-        <div class="mini-card">
-          <i class="fas fa-mobile-screen-button"></i>
-          <h3>Mobile Ready</h3>
-          <p>Fast, responsive, and clean on all devices.</p>
-        </div>
-        <div class="mini-card">
-          <i class="fas fa-bullseye"></i>
-          <h3>Conversion Focused</h3>
-          <p>Designed to turn visitors into clients.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-tag">Services</span>
-        <h2>Built to grow your business</h2>
-        <p>Simple, focused services designed to help you get more leads, more calls, and more clients.</p>
-      </div>
-      <div class="cards-grid">
-        <article class="service-card reveal">
-          <div class="icon"><i class="fas fa-laptop-code"></i></div>
-          <h3>Website Design</h3>
-          <p>Premium websites that look modern, load fast, and convert visitors into customers.</p>
-          <ul>
-            <li>Landing pages</li>
-            <li>Business websites</li>
-            <li>Responsive design</li>
-          </ul>
-        </article>
-        <article class="service-card reveal">
-          <div class="icon"><i class="fab fa-google"></i></div>
-          <h3>Google Ads</h3>
-          <p>Target the right audience and get high-intent leads with performance-driven ad campaigns.</p>
-          <ul>
-            <li>Search campaigns</li>
-            <li>Lead generation</li>
-            <li>Optimization</li>
-          </ul>
-        </article>
-        <article class="service-card reveal">
-          <div class="icon"><i class="fab fa-instagram"></i></div>
-          <h3>Instagram Growth</h3>
-          <p>Grow your brand presence with content strategy, profile optimization, and engagement support.</p>
-          <ul>
-            <li>Content strategy</li>
-            <li>Reel growth</li>
-            <li>Audience building</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="section soft-bg" id="projects">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-tag">Projects</span>
-        <h2>Sample work that shows results</h2>
-        <p>Here are a few example projects to show style, clarity, and conversion-focused design.</p>
-      </div>
-      <div class="projects-grid">
-        <article class="project-card reveal">
-          <div class="project-thumb project-1"></div>
-          <div class="project-content">
-            <h3>Business Website Redesign</h3>
-            <p>A clean, modern website built to increase inquiries and build trust.</p>
-          </div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-thumb project-2"></div>
-          <div class="project-content">
-            <h3>Google Ads Lead Campaign</h3>
-            <p>High-intent search ads focused on generating qualified leads.</p>
-          </div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-thumb project-3"></div>
-          <div class="project-content">
-            <h3>Instagram Growth Strategy</h3>
-            <p>Content and profile optimization system for audience growth.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="testimonials">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-tag">Testimonials</span>
-        <h2>What clients say</h2>
-        <p>Real feedback from brands that wanted better leads, better design, and better results.</p>
-      </div>
-      <div class="testimonials-grid">
-        <article class="testimonial-card reveal">
-          <p>“The website looks premium and our inquiries improved quickly. Very smooth experience.”</p>
-          <div class="client">
-            <strong>Aman Sharma</strong>
-            <span>Business Owner</span>
-          </div>
-        </article>
-        <article class="testimonial-card reveal">
-          <p>“Our Google Ads started bringing better quality leads. Great communication and clear strategy.”</p>
-          <div class="client">
-            <strong>Priya Mehta</strong>
-            <span>Clinic Founder</span>
-          </div>
-        </article>
-        <article class="testimonial-card reveal">
-          <p>“Instagram growth was steady and the content direction was much more professional.”</p>
-          <div class="client">
-            <strong>Rahul Verma</strong>
-            <span>Startup Owner</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="section soft-bg" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-info reveal">
-        <span class="section-tag">Contact</span>
-        <h2>Let’s talk about your project</h2>
-        <p>
-          Want a website, ads, or growth strategy that actually converts?
-          Send a message and let’s discuss the best next step.
-        </p>
-        <div class="contact-points">
-          <div><i class="fas fa-check"></i> Fast response</div>
-          <div><i class="fas fa-check"></i> Clear communication</div>
-          <div><i class="fas fa-check"></i> Conversion-focused approach</div>
-        </div>
-        <a href="https://wa.me/917821857020?text=Hi%2C%20I%20want%20to%20work%20with%20you."
-           class="btn btn-secondary"
-           target="_blank"
-           rel="noopener">
-          <i class="fab fa-whatsapp"></i> WhatsApp Now
-        </a>
-      </div>
-      <form class="contact-form reveal">
-        <div class="form-row">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-        </div>
-        <input type="text" placeholder="Subject" required />
-        <textarea rows="6" placeholder="Tell me about your project..." required></textarea>
-        <button type="submit" class="btn btn-primary full-btn">
-          Send Inquiry <i class="fas fa-paper-plane"></i>
-        </button>
-      </form>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Freelancer. All rights reserved.</p>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+
+<canvas id="bg"></canvas>
+
+<header class="nav">
+<div class="logo">Rounak.</div>
+<a href="#contact" class="nav-btn">Get Clients 🚀</a>
+</header>
+
+<section class="hero">
+<h1>I Make Brands <span id="typeText"></span></h1>
+<p>SEO • SMM • Ads • Websites • E-Commerce</p>
+<a href="#contact" class="cta">Start Project</a>
+</section>
+
+<section class="section">
+<h2>Services</h2>
+<div class="grid">
+
+<div class="card">🌐 Website Design</div>
+<div class="card">📈 SEO</div>
+<div class="card">📢 Social Media</div>
+<div class="card">💰 Google Ads</div>
+<div class="card">🛒 E-Commerce</div>
+<div class="card">🎯 Lead Generation</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Portfolio</h2>
+<div class="grid">
+
+<div class="card">🔥 Landing Page</div>
+<div class="card">📊 Ads Campaign</div>
+<div class="card">📱 Instagram Growth</div>
+
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2>Contact Me</h2>
+<form class="form">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Email">
+<textarea placeholder="Your Message"></textarea>
+<button>Send Message 🚀</button>
+</form>
+</section>
+
+<footer>
+<p>©️ 2026 Rounak Arora • Digital Growth</p>
+</footer>
+
+<a href="https://wa.me/917821857020" class="whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+
 </body>
 </html>
