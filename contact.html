@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Rounak Arora</title>
+<title>Contact | Rounak Arora — Digital Growth Expert</title>
+
+<!-- IMPROVED: Meta description for SEO -->
+<meta name="description" content="Contact Rounak Arora — Digital Marketing Expert in Jaipur. Get in touch for SEO, Google Ads, Social Media & Website Design services.">
+
+<!-- IMPROVED: Open Graph tags for WhatsApp/LinkedIn previews -->
+<meta property="og:title" content="Contact | Rounak Arora — Digital Growth Expert">
+<meta property="og:description" content="Ready to grow your brand? Let's connect. SEO, Ads, Social Media & Web Design.">
+<meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
+<meta property="og:url" content="https://rounakarora.vercel.app/contact.html">
+<meta property="og:type" content="website">
 
 <meta name="theme-color" content="#020617">
 <style>
@@ -14,18 +24,163 @@ html,body{
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- IMPROVED: Hamburger menu + form UX styles -->
+<style>
+/* ── Hamburger menu ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 6px;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(2, 6, 23, 0.97);
+    backdrop-filter: blur(12px);
+    z-index: 150;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    font-size: 1.4rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    width: 100%;
+    text-align: center;
+  }
+  .hire-btn { display: none; }
+}
+
+/* ── Contact form improvements ── */
+.contact-wrap form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact-wrap input,
+.contact-wrap textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.contact-wrap input:focus,
+.contact-wrap textarea:focus {
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.08);
+}
+.contact-wrap input::placeholder,
+.contact-wrap textarea::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+.contact-wrap textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+/* IMPROVED: form success message */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  color: #4ade80;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.form-success i { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
+/* ── Mobile sticky CTA ── */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(2, 6, 23, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.9rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 998;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+.sticky-cta a {
+  background: #fff;
+  color: #020617;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .sticky-cta { display: flex; }
+  /* give footer room above sticky bar */
+  footer { padding-bottom: 5rem; }
+}
+
+/* ── Active nav link ── */
+.nav-links a.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Card hover tap feedback on mobile ── */
+@media (max-width: 768px) {
+  .card { min-height: auto; }
+  .grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+</style>
 </head>
 <body>
 
+<!-- IMPROVED: Hamburger added to navbar -->
 <header class="navbar">
   <div class="logo">Rounak.</div>
 
-  <nav class="nav-links">
+  <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="results.html">Results</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
   </nav>
 
   <a href="contact.html" class="hire-btn">Hire Me</a>
@@ -36,16 +191,21 @@ html,body{
   <div class="glow two"></div>
 
   <h1 class="section-title">Let's Work Together</h1>
-  <p class="section-sub">Ready to grow your brand? Let’s connect.</p>
+  <p class="section-sub">Ready to grow your brand? Let's connect.</p>
 
+  <!-- IMPROVED: form now shows success message on submit -->
   <div class="contact-wrap">
-    <form>
+    <form id="contactForm">
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <input type="text" placeholder="Business / Brand Name">
       <textarea placeholder="Tell me about your project"></textarea>
       <button class="btn" type="submit">Send Message 🚀</button>
     </form>
+    <div class="form-success" id="formSuccess">
+      <i class="fas fa-check-circle"></i>
+      Message sent! I'll get back to you within 24 hours.
+    </div>
   </div>
 </section>
 
@@ -86,6 +246,39 @@ html,body{
   ©️ 2026 Rounak Arora • Contact
 </footer>
 
+<!-- IMPROVED: Mobile sticky CTA bar -->
+<div class="sticky-cta">
+  <span>Let's grow your brand 🚀</span>
+  <a href="https://wa.me/917821857020" target="_blank">WhatsApp Me</a>
+</div>
+
 <script src="script.js"></script>
+
+<!-- IMPROVED: Hamburger + form success script -->
+<script>
+  // Hamburger menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  });
+  // Close menu on link click
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuBtn.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Form success message
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+</script>
 </body>
 </html>
