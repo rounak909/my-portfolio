@@ -3,104 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Results | Rounak Arora</title>
+<title>Results & Growth | Rounak Arora — Digital Growth Expert</title>
+
+<!-- IMPROVED: SEO meta description -->
+<meta name="description" content="Real results by Rounak Arora — 9K+ followers growth, 500K+ reach, 3X engagement boost. See the Gulabi Nagari Jaipur case study.">
+
+<!-- IMPROVED: Open Graph tags -->
+<meta property="og:title" content="Results & Growth | Rounak Arora">
+<meta property="og:description" content="9K+ followers, 500K+ reach, 3X engagement — proof of real digital marketing strategy.">
+<meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
+<meta property="og:url" content="https://rounakarora.vercel.app/results.html">
+<meta property="og:type" content="website">
 
 <meta name="theme-color" content="#020617">
-<style>
-html,body{
-  background:#020617;
-}
-</style>
+<style>html,body{ background:#020617; }</style>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ── IMPROVED: Result boxes — animated count support ── */
+.result-box h2 {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── IMPROVED: Case study section responsive ── */
+.case-bio h2 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+.case-bio p {
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 20px;
+  font-size: clamp(15px, 2vw, 17px);
+}
+
+/* ── IMPROVED: Case study highlights strip ── */
+.case-highlights {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.case-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(69,231,255,0.25);
+  background: rgba(69,231,255,0.07);
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── IMPROVED: Bottom CTA section ── */
+.results-cta {
+  text-align: center;
+  padding: 3rem 7% 5rem;
+}
+.results-cta h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+.results-cta p {
+  color: var(--text);
+  font-size: 17px;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.results-cta .hero-actions {
+  justify-content: center;
+}
+
+/* ── Mobile sticky CTA ── */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(2,6,23,0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.9rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 998;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+.sticky-cta a {
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  color: #020617;
+  padding: 0.55rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 0 16px rgba(69,231,255,.35);
+}
+@media (max-width: 768px) {
+  .sticky-cta { display: flex; }
+  footer { padding-bottom: 5.5rem; }
+
+  .hero-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+  .case-bio {
+    text-align: center;
+  }
+  .case-bio .badge {
+    margin: 0 auto 16px;
+    display: inline-block;
+  }
+  .case-highlights {
+    justify-content: center;
+  }
+  .case-bio .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .case-bio .stats {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 <body>
 
+<!-- IMPROVED: Hamburger menu -->
 <header class="navbar">
   <div class="logo">Rounak.</div>
 
-  <nav class="nav-links">
+  <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="results.html">Results</a>
+    <a href="results.html" class="active">Results</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <a href="contact.html" class="hire-btn">Hire Me</a>
 </header>
 
+<!-- STATS SECTION -->
 <section>
   <div class="glow one"></div>
   <div class="glow two"></div>
 
-  <h1 class="section-title">Results & Growth</h1>
+  <h1 class="section-title">Results &amp; Growth</h1>
   <p class="section-sub">Proof of strategy, consistency and digital growth.</p>
 
+  <!-- IMPROVED: Animated count-up on scroll -->
   <div class="grid">
-
     <div class="result-box">
-      <h2>9K+</h2>
+      <h2><span class="rcount" data-target="9" data-suffix="K+">0</span></h2>
       <span>Followers Growth</span>
     </div>
-
     <div class="result-box">
-      <h2>500K+</h2>
+      <h2><span class="rcount" data-target="500" data-suffix="K+">0</span></h2>
       <span>Total Reach</span>
     </div>
-
     <div class="result-box">
-      <h2>3X</h2>
+      <h2><span class="rcount" data-target="3" data-suffix="X">0</span></h2>
       <span>Engagement Boost</span>
     </div>
-
   </div>
 </section>
 
+<!-- CASE STUDY SECTION -->
 <section>
   <h2 class="section-title">Featured Project</h2>
-  <p class="section-sub">Gulabi Nagari Jaipur Growth Case Study</p>
+  <p class="section-sub">Gulabi Nagari Jaipur — Growth Case Study</p>
 
   <div class="hero-wrap">
 
     <div class="hero-card">
-      <img src="insta.jpg" alt="Project Result" style="width:100%;border-radius:18px;">
+      <img src="insta.jpg" alt="Gulabi Nagari Jaipur Instagram Growth Result" style="width:100%;border-radius:18px;">
     </div>
 
-    <div>
+    <!-- IMPROVED: Added class + highlights strip -->
+    <div class="case-bio">
       <div class="badge">📈 Case Study</div>
 
-      <h2 style="font-size:40px; margin-bottom:15px;">
-        Gulabi Nagari Jaipur
-      </h2>
+      <h2>Gulabi Nagari Jaipur</h2>
 
-      <p style="line-height:1.9;color:var(--text);margin-bottom:20px;">
+      <p>
         Built a Jaipur-focused page with strong local audience targeting,
         engaging content strategy and consistent reach growth.
         Result: Better visibility, stronger engagement and audience trust.
       </p>
 
+      <!-- IMPROVED: Visual highlight tags -->
+      <div class="case-highlights">
+        <span class="case-tag"><i class="fas fa-location-dot"></i> Local Audience Focus</span>
+        <span class="case-tag"><i class="fas fa-fire"></i> Viral Content</span>
+        <span class="case-tag"><i class="fas fa-shield-halved"></i> Brand Trust</span>
+      </div>
+
       <div class="stats">
-
         <div class="stat">
-          <h3>Local</h3>
-          <p>Audience Focus</p>
+          <h3>9K+</h3>
+          <p>Followers</p>
         </div>
-
         <div class="stat">
-          <h3>Viral</h3>
-          <p>Content Reach</p>
+          <h3>500K+</h3>
+          <p>Total Reach</p>
         </div>
-
         <div class="stat">
-          <h3>Trust</h3>
-          <p>Brand Presence</p>
+          <h3>3X</h3>
+          <p>Engagement</p>
         </div>
+      </div>
 
+      <!-- IMPROVED: CTA inside case study -->
+      <div style="margin-top:24px;">
+        <a href="contact.html" class="btn">Get Same Results →</a>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- IMPROVED: Bottom CTA section -->
+<section class="results-cta">
+  <h2>Want Results Like These?</h2>
+  <p>Let's build a strategy around your brand and start growing today.</p>
+  <div class="hero-actions">
+    <a href="contact.html" class="btn">Start a Project</a>
+    <a href="services.html" class="btn-ghost">See My Services →</a>
   </div>
 </section>
 
@@ -108,6 +249,36 @@ html,body{
   ©️ 2026 Rounak Arora • Results
 </footer>
 
+<!-- IMPROVED: Mobile sticky CTA -->
+<div class="sticky-cta">
+  <span>Want results like these? 📈</span>
+  <a href="contact.html">Let's Talk</a>
+</div>
+
 <script src="script.js"></script>
+
+<!-- IMPROVED: Animated result counters -->
+<script>
+  const rcounts = document.querySelectorAll('.rcount');
+  if (rcounts.length > 0) {
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        let count = 0;
+        const step = Math.max(1, Math.ceil(target / 50));
+        const timer = setInterval(() => {
+          count = Math.min(count + step, target);
+          el.textContent = count + suffix;
+          if (count >= target) clearInterval(timer);
+        }, 35);
+        ro.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    rcounts.forEach(c => ro.observe(c));
+  }
+</script>
 </body>
 </html>
