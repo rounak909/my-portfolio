@@ -3,27 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Rounak Arora</title>
+<title>Services | Rounak Arora — Digital Growth Expert</title>
+
+<!-- IMPROVED: SEO meta description -->
+<meta name="description" content="Services by Rounak Arora — SEO, Social Media Marketing, Google Ads, Website Design, E-Commerce Growth & Branding in Jaipur. Real strategies, real results.">
+
+<!-- IMPROVED: Open Graph tags -->
+<meta property="og:title" content="Services | Rounak Arora — Digital Growth Expert">
+<meta property="og:description" content="Everything you need to grow your brand online — SEO, Ads, Web Design & more.">
+<meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
+<meta property="og:url" content="https://rounakarora.vercel.app/services.html">
+<meta property="og:type" content="website">
 
 <meta name="theme-color" content="#020617">
-<style>
-html,body{
-  background:#020617;
-}
-</style>
+<style>html,body{ background:#020617; }</style>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ── IMPROVED: Service cards have CTA link at bottom ── */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card p {
+  flex: 1;
+}
+
+.card-cta {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cyan);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+
+.card-cta:hover {
+  opacity: 0.75;
+}
+
+/* ── IMPROVED: Bottom CTA section ── */
+.services-cta {
+  text-align: center;
+  padding: 4rem 7% 5rem;
+}
+
+.services-cta h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.services-cta p {
+  color: var(--text);
+  font-size: 17px;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.services-cta .hero-actions {
+  justify-content: center;
+}
+
+/* ── Mobile sticky CTA ── */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(2,6,23,0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.9rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 998;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.sticky-cta a {
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  color: #020617;
+  padding: 0.55rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 0 16px rgba(69,231,255,.35);
+}
+
+@media (max-width: 768px) {
+  .sticky-cta { display: flex; }
+  footer { padding-bottom: 5.5rem; }
+}
+</style>
 </head>
 <body>
 
+<!-- IMPROVED: Hamburger menu -->
 <header class="navbar">
   <div class="logo">Rounak.</div>
 
-  <nav class="nav-links">
+  <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="services.html">Services</a>
+    <a href="services.html" class="active">Services</a>
     <a href="results.html">Results</a>
     <a href="contact.html">Contact</a>
   </nav>
@@ -38,42 +132,49 @@ html,body{
   <h1 class="section-title">My Services</h1>
   <p class="section-sub">Everything you need to grow your brand online.</p>
 
+  <!-- IMPROVED: Each card now has a "Get started →" CTA link -->
   <div class="grid">
 
     <div class="card">
       <div class="icon"><i class="fas fa-search"></i></div>
       <h3>SEO</h3>
-      <p>Rank higher on Google and get organic traffic that converts.</p>
+      <p>Rank higher on Google and get organic traffic that converts into real clients.</p>
+      <a href="contact.html" class="card-cta">Get started →</a>
     </div>
 
     <div class="card">
       <div class="icon"><i class="fab fa-instagram"></i></div>
       <h3>Social Media Marketing</h3>
-      <p>Build your audience, engagement and online authority.</p>
+      <p>Build your audience, engagement and online authority on every platform.</p>
+      <a href="contact.html" class="card-cta">Get started →</a>
     </div>
 
     <div class="card">
       <div class="icon"><i class="fab fa-google"></i></div>
       <h3>Google Ads</h3>
-      <p>Generate high quality leads with paid campaigns.</p>
+      <p>Generate high quality leads with targeted paid campaigns that deliver ROI.</p>
+      <a href="contact.html" class="card-cta">Get started →</a>
     </div>
 
     <div class="card">
       <div class="icon"><i class="fas fa-laptop-code"></i></div>
       <h3>Website Design</h3>
-      <p>Premium websites designed for trust and conversions.</p>
+      <p>Premium websites designed for trust, speed, and conversions — not just looks.</p>
+      <a href="contact.html" class="card-cta">Get started →</a>
     </div>
 
     <div class="card">
       <div class="icon"><i class="fas fa-cart-shopping"></i></div>
       <h3>E-Commerce Growth</h3>
-      <p>Scale your online store with smart growth strategies.</p>
+      <p>Scale your online store with smart strategies that increase sales consistently.</p>
+      <a href="contact.html" class="card-cta">Get started →</a>
     </div>
 
     <div class="card">
       <div class="icon"><i class="fas fa-bullhorn"></i></div>
       <h3>Branding</h3>
-      <p>Create a memorable and premium online presence.</p>
+      <p>Create a memorable and premium online presence that stands out in your market.</p>
+      <a href="contact.html" class="card-cta">Get started →</a>
     </div>
 
   </div>
@@ -84,28 +185,40 @@ html,body{
   <p class="section-sub">Real strategies, real execution, real growth.</p>
 
   <div class="grid">
-
     <div class="result-box">
       <h2>3X</h2>
       <span>Growth Potential</span>
     </div>
-
     <div class="result-box">
       <h2>24/7</h2>
       <span>Support</span>
     </div>
-
     <div class="result-box">
       <h2>100%</h2>
       <span>Client Focus</span>
     </div>
+  </div>
+</section>
 
+<!-- IMPROVED: Bottom CTA section to drive conversions -->
+<section class="services-cta">
+  <h2>Ready to Grow Your Brand?</h2>
+  <p>Let's talk about your goals and build a strategy that works.</p>
+  <div class="hero-actions">
+    <a href="contact.html" class="btn">Start a Project</a>
+    <a href="results.html" class="btn-ghost">See Real Results →</a>
   </div>
 </section>
 
 <footer>
   ©️ 2026 Rounak Arora • Services
 </footer>
+
+<!-- IMPROVED: Mobile sticky CTA -->
+<div class="sticky-cta">
+  <span>Need digital growth? 🚀</span>
+  <a href="contact.html">Let's Talk</a>
+</div>
 
 <script src="script.js"></script>
 </body>
