@@ -3,26 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Rounak Arora</title>
+<title>About | Rounak Arora — Digital Growth Expert</title>
+
+<!-- IMPROVED: SEO meta description -->
+<meta name="description" content="Learn about Rounak Arora — Digital Marketer & Website Growth Expert in Jaipur. SEO, Lead Generation, Social Media, Google Ads & Premium Websites.">
+
+<!-- IMPROVED: Open Graph tags for WhatsApp / LinkedIn previews -->
+<meta property="og:title" content="About | Rounak Arora — Digital Growth Expert">
+<meta property="og:description" content="Digital Marketer & Website Growth Expert helping brands get more visibility, trust, and clients.">
+<meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
+<meta property="og:url" content="https://rounakarora.vercel.app/about.html">
+<meta property="og:type" content="website">
 
 <meta name="theme-color" content="#020617">
-<style>
-html,body{
-  background:#020617;
-}
-</style>
+<style>html,body{ background:#020617; }</style>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ── About bio responsive ── */
+.about-bio h2 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+.about-bio p {
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 20px;
+  font-size: clamp(15px, 2vw, 17px);
+}
+
+/* ── Mobile sticky CTA ── */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(2,6,23,0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.9rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 998;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+.sticky-cta a {
+  background: linear-gradient(90deg,var(--cyan),var(--blue));
+  color: #020617;
+  padding: 0.55rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 0 16px rgba(69,231,255,.35);
+}
+@media (max-width:768px) {
+  .sticky-cta { display: flex; }
+  footer { padding-bottom: 5.5rem; }
+
+  .hero-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+  .about-bio {
+    text-align: center;
+  }
+  .about-bio .badge {
+    margin: 0 auto 16px;
+    display: inline-block;
+  }
+  .about-bio .stats {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+@media (max-width:480px) {
+  .about-bio .stats {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 <body>
 
+<!-- IMPROVED: Hamburger menu -->
 <header class="navbar">
   <div class="logo">Rounak.</div>
 
-  <nav class="nav-links">
+  <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active">About</a>
     <a href="services.html">Services</a>
     <a href="results.html">Results</a>
     <a href="contact.html">Contact</a>
@@ -41,12 +118,10 @@ html,body{
 
     <div class="hero-card profile-box">
       <h2>Rounak Arora</h2>
-
       <p>
         Helping brands grow with smart digital marketing,
         premium websites, and real business results.
       </p>
-
       <div class="mini-stats">
         <div>SEO Growth</div>
         <div>Lead Generation</div>
@@ -54,14 +129,13 @@ html,body{
       </div>
     </div>
 
-    <div>
+    <!-- IMPROVED: Added .about-bio class for responsive control -->
+    <div class="about-bio">
       <div class="badge">👋 Hello, I'm Rounak</div>
 
-      <h2 style="font-size:42px; margin-bottom:15px;">
-        Digital Marketer & Website Growth Expert
-      </h2>
+      <h2>Digital Marketer &amp; Website Growth Expert</h2>
 
-      <p style="line-height:1.9;color:var(--text);margin-bottom:20px;">
+      <p>
         I help brands grow online through powerful marketing strategies,
         social media growth, lead generation, paid ads and premium websites.
         My focus is simple — more visibility, more trust, more clients.
@@ -72,12 +146,10 @@ html,body{
           <h3>SEO</h3>
           <p>Ranking Growth</p>
         </div>
-
         <div class="stat">
           <h3>SMM</h3>
           <p>Audience Growth</p>
         </div>
-
         <div class="stat">
           <h3>ADS</h3>
           <p>Lead Generation</p>
@@ -88,12 +160,16 @@ html,body{
   </div>
 </section>
 
-<section>
+<section style="text-align:center;">
   <h2 class="section-title">Certificates</h2>
   <p class="section-sub">View my learning progress and certificates.</p>
 
+  <!-- IMPROVED: Added secondary CTA -->
   <div class="hero-actions" style="justify-content:center;">
-    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="btn">View Certificates</a>
+    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="btn">
+      <i class="fas fa-certificate"></i> View Certificates
+    </a>
+    <a href="contact.html" class="btn-ghost">Work With Me →</a>
   </div>
 </section>
 
@@ -102,31 +178,33 @@ html,body{
   <p class="section-sub">A premium mindset with real execution.</p>
 
   <div class="grid">
-
     <div class="card">
       <div class="icon"><i class="fas fa-lightbulb"></i></div>
       <h3>Creative Strategy</h3>
-      <p>Fresh ideas that stand out in the market.</p>
+      <p>Fresh ideas that stand out in the market and actually get results.</p>
     </div>
-
     <div class="card">
       <div class="icon"><i class="fas fa-chart-line"></i></div>
       <h3>Growth Focused</h3>
-      <p>Every action aligned to business results.</p>
+      <p>Every action is aligned to business results — not just vanity metrics.</p>
     </div>
-
     <div class="card">
       <div class="icon"><i class="fas fa-handshake"></i></div>
       <h3>Long-Term Support</h3>
-      <p>I build relationships, not just projects.</p>
+      <p>I build relationships, not just projects. Always here when you need me.</p>
     </div>
-
   </div>
 </section>
 
 <footer>
   ©️ 2026 Rounak Arora • About Page
 </footer>
+
+<!-- IMPROVED: Mobile sticky CTA -->
+<div class="sticky-cta">
+  <span>Let's build something great 🚀</span>
+  <a href="contact.html">Hire Me</a>
+</div>
 
 <script src="script.js"></script>
 </body>
