@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Rounak Arora — Digital Growth Expert</title>
 
-<!-- IMPROVED: SEO meta description -->
 <meta name="description" content="Learn about Rounak Arora — Digital Marketer & Website Growth Expert in Jaipur. SEO, Lead Generation, Social Media, Google Ads & Premium Websites.">
 
-<!-- IMPROVED: Open Graph tags for WhatsApp / LinkedIn previews -->
 <meta property="og:title" content="About | Rounak Arora — Digital Growth Expert">
 <meta property="og:description" content="Digital Marketer & Website Growth Expert helping brands get more visibility, trust, and clients.">
 <meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
@@ -20,76 +18,13 @@
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-/* ── About bio responsive ── */
-.about-bio h2 {
-  font-size: clamp(1.6rem, 4vw, 2.6rem);
-  margin-bottom: 15px;
-  line-height: 1.2;
-}
-.about-bio p {
-  line-height: 1.9;
-  color: var(--text);
-  margin-bottom: 20px;
-  font-size: clamp(15px, 2vw, 17px);
-}
-
-/* ── Mobile sticky CTA ── */
-.sticky-cta {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(2,6,23,0.96);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 0.9rem 1.5rem;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 998;
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
-}
-.sticky-cta a {
-  background: linear-gradient(90deg,var(--cyan),var(--blue));
-  color: #020617;
-  padding: 0.55rem 1.25rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 13px;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 0 16px rgba(69,231,255,.35);
-}
-@media (max-width:768px) {
-  .sticky-cta { display: flex; }
-  footer { padding-bottom: 5.5rem; }
-
-  .hero-wrap {
-    grid-template-columns: 1fr !important;
-    gap: 24px;
-  }
-  .about-bio {
-    text-align: center;
-  }
-  .about-bio .badge {
-    margin: 0 auto 16px;
-    display: inline-block;
-  }
-  .about-bio .stats {
-    grid-template-columns: repeat(3,1fr);
-  }
-}
-@media (max-width:480px) {
-  .about-bio .stats {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
 </head>
 <body>
 
-<!-- IMPROVED: Hamburger menu -->
+<!-- FIX: Canvas add kiya — particles ke liye zaroori tha -->
+<canvas id="particles"></canvas>
+
+<!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">Rounak.</div>
 
@@ -108,12 +43,8 @@
   <a href="contact.html" class="hire-btn">Hire Me</a>
 </header>
 
-<section>
-  <div class="glow one"></div>
-
-  <h1 class="section-title">About Me</h1>
-  <p class="section-sub">The mind behind growth-focused digital strategies.</p>
-
+<!-- ABOUT HERO -->
+<section class="hero">
   <div class="hero-wrap">
 
     <div class="hero-card profile-box">
@@ -123,15 +54,14 @@
         premium websites, and real business results.
       </p>
       <div class="mini-stats">
-        <div>SEO Growth</div>
-        <div>Lead Generation</div>
-        <div>24/7 Support</div>
+        <div>⚡ SEO Growth</div>
+        <div>📈 Lead Generation</div>
+        <div>🕐 24/7 Support</div>
       </div>
     </div>
 
-    <!-- IMPROVED: Added .about-bio class for responsive control -->
     <div class="about-bio">
-      <div class="badge">👋 Hello, I'm Rounak</div>
+      <span class="badge">👋 Hello, I'm Rounak</span>
 
       <h2>Digital Marketer &amp; Website Growth Expert</h2>
 
@@ -141,18 +71,19 @@
         My focus is simple — more visibility, more trust, more clients.
       </p>
 
+      <!-- FIX: Numeric counters with data-target for animation -->
       <div class="stats">
         <div class="stat">
-          <h3>SEO</h3>
-          <p>Ranking Growth</p>
+          <h3 class="count" data-target="50" data-suffix="+">50+</h3>
+          <p>Projects Done</p>
         </div>
         <div class="stat">
-          <h3>SMM</h3>
-          <p>Audience Growth</p>
+          <h3 class="count" data-target="3" data-suffix="X">3X</h3>
+          <p>Avg Growth</p>
         </div>
         <div class="stat">
-          <h3>ADS</h3>
-          <p>Lead Generation</p>
+          <h3>24/7</h3>
+          <p>Support</p>
         </div>
       </div>
     </div>
@@ -160,11 +91,12 @@
   </div>
 </section>
 
+<!-- CERTIFICATES -->
 <section style="text-align:center;">
+  <span class="section-tag">📜 Credentials</span>
   <h2 class="section-title">Certificates</h2>
   <p class="section-sub">View my learning progress and certificates.</p>
 
-  <!-- IMPROVED: Added secondary CTA -->
   <div class="hero-actions" style="justify-content:center;">
     <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="btn">
       <i class="fas fa-certificate"></i> View Certificates
@@ -173,7 +105,9 @@
   </div>
 </section>
 
+<!-- WHY WORK WITH ME -->
 <section>
+  <span class="section-tag">✅ Why Me</span>
   <h2 class="section-title">Why Work With Me</h2>
   <p class="section-sub">A premium mindset with real execution.</p>
 
@@ -197,10 +131,10 @@
 </section>
 
 <footer>
-  ©️ 2026 Rounak Arora • About Page
+  ©️ 2026 Rounak Arora • Digital Growth Expert
 </footer>
 
-<!-- IMPROVED: Mobile sticky CTA -->
+<!-- MOBILE STICKY CTA -->
 <div class="sticky-cta">
   <span>Let's build something great 🚀</span>
   <a href="contact.html">Hire Me</a>
