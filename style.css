@@ -1,6 +1,9 @@
 /* ===================================
-   STYLE.CSS — FINAL CLEAN VERSION
+   STYLE.CSS — FIXED & CLEAN VERSION
 =================================== */
+
+/* @import ALWAYS FIRST — Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 /* RESET */
 * {
@@ -24,8 +27,6 @@
 html {
   scroll-behavior: smooth;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 body {
   font-family: 'Plus Jakarta Sans', Arial, sans-serif;
@@ -268,11 +269,14 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
+/* FIX: Services text wrap on mobile */
 .hero-text {
   font-size: 18px;
   line-height: 1.8;
   color: var(--text);
   margin-bottom: 26px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-actions {
@@ -662,7 +666,10 @@ footer {
   }
   .badge       { margin: 0 auto 18px; }
   .hero-title  { font-size: clamp(2rem, 9vw, 3rem); line-height: 1.15; }
-  .hero-text   { font-size: 16px; }
+  .hero-text   { font-size: 15px; }
+
+  /* FIX: Services bullet text wrap on small screens */
+  .hero-text br { display: none; }
 
   .hero-actions {
     flex-direction: column;
@@ -715,10 +722,13 @@ footer {
    SMALL MOBILE — max 480px
 ════════════════════════════ */
 @media (max-width: 480px) {
-  .hero-title  { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .hero-title    { font-size: clamp(1.8rem, 8vw, 2.4rem); }
   .section-title { font-size: 28px; }
-  .logo        { font-size: 26px; }
-  .badge       { font-size: 13px; }
+  .logo          { font-size: 26px; }
+  .badge         { font-size: 13px; }
   .about-bio .stats { grid-template-columns: 1fr; }
   .case-bio .stats  { grid-template-columns: 1fr; }
+
+  /* FIX: Sticky CTA text shorter on very small screens */
+  .sticky-cta { font-size: 12px; padding: 0.75rem 1rem; }
 }
