@@ -186,36 +186,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      5. HAMBURGER MENU
-     FIX: Escape key se menu band ho
-     FIX: Navbar show karo jab menu open ho
+     FIX: Separate overlay div — navbar ke bahar
+     Stacking context issue khatam
   ────────────────────────────────── */
-  const menuBtn  = document.getElementById("menuBtn");
-  const navLinks = document.getElementById("navLinks");
+  const menuBtn = document.getElementById("menuBtn");
+  const overlay = document.getElementById("mobileNavOverlay");
 
   function closeMenu() {
-    if (!menuBtn || !navLinks) return;
-    menuBtn.classList.remove("open");
-    navLinks.classList.remove("open");
+    if (!overlay) return;
+    overlay.classList.remove("open");
+    if (menuBtn) menuBtn.classList.remove("open");
     document.body.style.overflow = "";
-    // FIX: Menu band hone pe navbar wapas dikhao
-    if (navbar) navbar.style.transform = "translateY(0)";
   }
 
-  if (menuBtn && navLinks) {
+  if (menuBtn && overlay) {
     menuBtn.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
+      const isOpen = overlay.classList.toggle("open");
       menuBtn.classList.toggle("open");
       document.body.style.overflow = isOpen ? "hidden" : "";
-      // FIX: Menu open hone pe navbar hamesha dikhao
-      if (navbar && isOpen) navbar.style.transform = "translateY(0)";
     });
 
-    navLinks.querySelectorAll("a").forEach(link => {
+    overlay.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", closeMenu);
     });
 
-    // FIX: Escape key se menu band
-    document.addEventListener("keydown", (e) => {
+    const closeBtn = overlay.querySelector(".close-btn");
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+
+    document.addEventListener("keydown", e => {
       if (e.key === "Escape") closeMenu();
     });
   }
