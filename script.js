@@ -1,13 +1,12 @@
 /* ===================================
-   SCRIPT.JS — FIXED & CLEAN VERSION
+   SCRIPT.JS — FINAL FIXED VERSION
 =================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      1. PARTICLE BACKGROUND
-     FIX: Fewer particles on mobile (performance)
-     FIX: Resize redraws particle positions properly
+     Mobile pe fewer particles (performance)
   ────────────────────────────────── */
   const canvas = document.getElementById("particles");
   if (canvas) {
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function spawnParticles() {
       particles = [];
-      const count = isMobile() ? 30 : 70; // FIX: mobile pe kam particles
+      const count = isMobile() ? 30 : 70;
       for (let i = 0; i < count; i++) {
         particles.push({
           x:  Math.random() * w,
@@ -35,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function resize() {
       w = canvas.width  = window.innerWidth;
       h = canvas.height = window.innerHeight;
-      spawnParticles(); // FIX: resize pe naye particles spawn
+      spawnParticles();
     }
     resize();
     window.addEventListener("resize", resize);
 
     function draw() {
       ctx.clearRect(0, 0, w, h);
-      const linkDist = isMobile() ? 80 : 120; // FIX: mobile pe chhoti link distance
+      const linkDist = isMobile() ? 80 : 120;
 
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -65,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         p.y += p.dy;
         if (p.x < 0 || p.x > w) p.dx *= -1;
         if (p.y < 0 || p.y > h) p.dy *= -1;
-
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(69,231,255,0.65)";
@@ -75,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
       animFrameId = requestAnimationFrame(draw);
     }
 
-    // FIX: Page hidden hone pe animation pause (battery save)
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
         cancelAnimationFrame(animFrameId);
@@ -90,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      2. SCROLL REVEAL
-     FIX: Hero section hidden nahi hoga — direct show
+     Hero section pehle se visible rahega
   ────────────────────────────────── */
   const revealStyle = document.createElement("style");
   revealStyle.innerHTML = `
@@ -112,10 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
       entry.target.classList.add("show");
       revealObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.08 }); // FIX: 0.12 → 0.08, mobile pe bade cards miss nahi honge
+  }, { threshold: 0.08 });
 
   document.querySelectorAll("section, .card, .result-box, .t-card").forEach(el => {
-    // FIX: Hero section pehle se visible rahe
     if (el.classList.contains("hero")) {
       el.classList.add("show");
       return;
@@ -127,18 +123,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      3. NAVBAR SCROLL HIDE (mobile only)
-     FIX: Menu open ho toh navbar hide na ho
+     Menu open ho toh navbar hide na ho
   ────────────────────────────────── */
   const navbar = document.querySelector(".navbar");
   if (navbar) {
     let lastScroll = 0;
     window.addEventListener("scroll", () => {
       if (window.innerWidth > 768) return;
-
-      // FIX: Menu open hone pe navbar mat chhupao
       const navLinks = document.getElementById("navLinks");
       if (navLinks && navLinks.classList.contains("open")) return;
-
       const current = window.scrollY;
       if (current > lastScroll && current > 80) {
         navbar.style.transform  = "translateY(-100%)";
@@ -147,18 +140,13 @@ document.addEventListener("DOMContentLoaded", function () {
         navbar.style.transform = "translateY(0)";
       }
       lastScroll = current;
-    }, { passive: true }); // FIX: passive listener — scroll smooth hoga
+    }, { passive: true });
   }
 
 
   /* ──────────────────────────────────
      4. ANIMATED STAT COUNTERS
-     FIX: threshold 0.5 → 0.3 (mobile pe trigger miss nahi hoga)
-     FIX: data-target na ho toh skip karo (error prevent)
-     HTML mein yeh format use karo:
-       <h3 class="count" data-target="50" data-suffix="+">50+</h3>
-       <h3 class="count" data-target="3" data-suffix="X">3X</h3>
-       <h3 class="count" data-target="24" data-suffix="/7">24/7</h3>
+     .count and .rcount elements
   ────────────────────────────────── */
   function animateCounter(el, target, suffix) {
     let count = 0;
@@ -175,43 +163,39 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const target = +el.dataset.target;
-      if (!target) return; // FIX: target na ho toh skip
+      if (!target) return;
       animateCounter(el, target, el.dataset.suffix || "");
       counterObserver.unobserve(el);
     });
-  }, { threshold: 0.3 }); // FIX: 0.5 → 0.3
+  }, { threshold: 0.3 });
 
   document.querySelectorAll(".count, .rcount").forEach(c => counterObserver.observe(c));
 
 
   /* ──────────────────────────────────
      5. HAMBURGER MENU
-     FIX: Separate overlay div — navbar ke bahar
-     Stacking context issue khatam
+     Uses id="navLinks" — matches all HTML files
   ────────────────────────────────── */
-  const menuBtn = document.getElementById("menuBtn");
-  const overlay = document.getElementById("mobileNavOverlay");
+  const menuBtn  = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
 
   function closeMenu() {
-    if (!overlay) return;
-    overlay.classList.remove("open");
+    if (!navLinks) return;
+    navLinks.classList.remove("open");
     if (menuBtn) menuBtn.classList.remove("open");
     document.body.style.overflow = "";
   }
 
-  if (menuBtn && overlay) {
+  if (menuBtn && navLinks) {
     menuBtn.addEventListener("click", () => {
-      const isOpen = overlay.classList.toggle("open");
+      const isOpen = navLinks.classList.toggle("open");
       menuBtn.classList.toggle("open");
       document.body.style.overflow = isOpen ? "hidden" : "";
     });
 
-    overlay.querySelectorAll("a").forEach(link => {
+    navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", closeMenu);
     });
-
-    const closeBtn = overlay.querySelector(".close-btn");
-    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
 
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") closeMenu();
@@ -221,7 +205,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      6. CONTACT FORM
-     FIX: Basic validation — empty fields pe error
+     Inline success — no alert()
+     Empty field validation with red border
   ────────────────────────────────── */
   const contactForm = document.getElementById("contactForm");
   const formSuccess = document.getElementById("formSuccess");
@@ -230,7 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // FIX: Empty fields check
       const inputs = contactForm.querySelectorAll("input, textarea");
       let valid = true;
       inputs.forEach(inp => {
