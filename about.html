@@ -4,44 +4,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Rounak Arora — Digital Growth Expert</title>
-
-<meta name="description" content="Learn about Rounak Arora — Digital Marketer & Website Growth Expert in Jaipur. SEO, Lead Generation, Social Media, Google Ads & Premium Websites.">
-
+<meta name="description" content="Rounak Arora — Jaipur-based Digital Marketer & Content Creator with 3+ years experience. Founder of Gulabi Nagari & Modi Ka Parivar.">
 <meta property="og:title" content="About | Rounak Arora — Digital Growth Expert">
-<meta property="og:description" content="Digital Marketer & Website Growth Expert helping brands get more visibility, trust, and clients.">
+<meta property="og:description" content="3+ years experience, Founder of 2 digital platforms, BBA + MBA in Digital Marketing.">
 <meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
 <meta property="og:url" content="https://rounakarora.vercel.app/about.html">
 <meta property="og:type" content="website">
-
 <meta name="theme-color" content="#020617">
 <style>html,body{ background:#020617; }</style>
-
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* FIX: Menu overlay above all content */
+.navbar    { z-index: 1200 !important; }
+.hamburger { z-index: 1300 !important; }
+.nav-links.open { z-index: 1250 !important; }
+
+.about-bio h2 { font-size: clamp(1.6rem, 4vw, 2.6rem); margin-bottom: 15px; line-height: 1.2; }
+.about-bio p  { line-height: 1.9; color: var(--text); margin-bottom: 20px; font-size: clamp(15px, 2vw, 17px); }
+
+/* Expertise tags */
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(69,231,255,0.25);
+  background: rgba(69,231,255,0.07);
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Brand cards */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 2rem;
+}
+.brand-card {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: .35s;
+}
+.brand-card:hover { transform: translateY(-6px); box-shadow: 0 0 26px rgba(69,231,255,.15); }
+.brand-card h3 { font-size: 18px; margin-bottom: 8px; color: #fff; }
+.brand-card p  { font-size: 14px; color: var(--text); line-height: 1.6; }
+.brand-icon { font-size: 1.5rem; margin-bottom: 10px; }
+
+/* Education */
+.edu-list { list-style: none; display: grid; gap: 14px; margin-top: 1.5rem; }
+.edu-list li {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  color: var(--text);
+}
+.edu-list li i { color: var(--cyan); font-size: 18px; flex-shrink: 0; }
+.edu-list li strong { color: #fff; display: block; margin-bottom: 3px; }
+
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(2,6,23,0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.9rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 998;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+.sticky-cta a {
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  color: #020617;
+  padding: 0.55rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 0 16px rgba(69,231,255,.35);
+}
+@media (max-width: 768px) {
+  .sticky-cta { display: flex; }
+  footer { padding-bottom: 5.5rem; }
+  .hero-wrap { grid-template-columns: 1fr !important; gap: 24px; }
+  .about-bio { text-align: center; }
+  .about-bio .badge { margin: 0 auto 16px; display: inline-block; }
+  .about-bio .stats { grid-template-columns: repeat(3,1fr); }
+  .brand-grid { grid-template-columns: 1fr; }
+  .expertise-tags { justify-content: center; }
+}
+@media (max-width: 480px) {
+  .about-bio .stats { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
-<!-- FIX: Canvas add kiya — particles ke liye zaroori tha -->
-<canvas id="particles"></canvas>
-
-<!-- MOBILE NAV OVERLAY — navbar ke bahar (stacking fix) -->
-<div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <button class="close-btn" aria-label="Close menu">✕</button>
-  <a href="index.html">Home</a>
-  <a href="about.html" class="active">About</a>
-  <a href="services.html">Services</a>
-  <a href="results.html">Results</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">Rounak.</div>
-
   <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
-
   <nav class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
@@ -49,64 +132,126 @@
     <a href="results.html">Results</a>
     <a href="contact.html">Contact</a>
   </nav>
-
   <a href="contact.html" class="hire-btn">Hire Me</a>
 </header>
 
 <!-- ABOUT HERO -->
-<section class="hero">
-  <div class="hero-wrap">
+<section>
+  <div class="glow one"></div>
+  <h1 class="section-title">About Me</h1>
+  <p class="section-sub">The mind behind growth-focused digital strategies.</p>
 
+  <div class="hero-wrap">
     <div class="hero-card profile-box">
       <h2>Rounak Arora</h2>
-      <p>
-        Helping brands grow with smart digital marketing,
-        premium websites, and real business results.
-      </p>
+      <p>Jaipur-based Digital Marketer & Content Creator with 3+ years of real experience.</p>
       <div class="mini-stats">
-        <div>⚡ SEO Growth</div>
-        <div>📈 Lead Generation</div>
-        <div>🕐 24/7 Support</div>
+        <div>📍 Jaipur, Rajasthan</div>
+        <div>🎓 BBA + MBA (Digital Marketing)</div>
+        <div>🚀 Founder of 2 Digital Platforms</div>
       </div>
     </div>
 
     <div class="about-bio">
-      <span class="badge">👋 Hello, I'm Rounak</span>
-
-      <h2>Digital Marketer &amp; Website Growth Expert</h2>
-
+      <div class="badge">👋 Hello, I'm Rounak</div>
+      <h2>Digital Marketer & Content Creator</h2>
       <p>
-        I help brands grow online through powerful marketing strategies,
-        social media growth, lead generation, paid ads and premium websites.
-        My focus is simple — more visibility, more trust, more clients.
+        I'm a Jaipur-based Digital Marketer with 3+ years of experience in Instagram growth,
+        brand collaborations, and digital campaigns. Founder of <strong style="color:#fff">Gulabi Nagari</strong>
+        & <strong style="color:#fff">Modi Ka Parivar</strong> — I build platforms focused on
+        audience engagement, viral content, and brand promotions.
       </p>
 
-      <!-- FIX: Numeric counters with data-target for animation -->
+      <div class="expertise-tags">
+        <span class="tag"><i class="fab fa-instagram"></i> Instagram Growth</span>
+        <span class="tag"><i class="fas fa-video"></i> Reels & Content</span>
+        <span class="tag"><i class="fas fa-search"></i> SEO</span>
+        <span class="tag"><i class="fas fa-ad"></i> Meta Ads</span>
+        <span class="tag"><i class="fab fa-google"></i> Google Ads</span>
+        <span class="tag"><i class="fas fa-camera"></i> Product Shoots</span>
+        <span class="tag"><i class="fas fa-laptop-code"></i> Web Design</span>
+        <span class="tag"><i class="fas fa-cart-shopping"></i> E-Commerce</span>
+      </div>
+
       <div class="stats">
-        <div class="stat">
-          <h3 class="count" data-target="50" data-suffix="+">50+</h3>
-          <p>Projects Done</p>
-        </div>
-        <div class="stat">
-          <h3 class="count" data-target="3" data-suffix="X">3X</h3>
-          <p>Avg Growth</p>
-        </div>
-        <div class="stat">
-          <h3>24/7</h3>
-          <p>Support</p>
-        </div>
+        <div class="stat"><h3>3+</h3><p>Years Experience</p></div>
+        <div class="stat"><h3>2</h3><p>Platforms Founded</p></div>
+        <div class="stat"><h3>50+</h3><p>Projects Done</p></div>
       </div>
     </div>
-
   </div>
+</section>
+
+<!-- BRAND WORK -->
+<section>
+  <h2 class="section-title">Brand Work & Platforms</h2>
+  <p class="section-sub">Platforms I founded and brands I've worked with.</p>
+
+  <div class="brand-grid">
+    <div class="brand-card">
+      <div class="brand-icon">🌸</div>
+      <h3>Gulabi Nagari Jaipur</h3>
+      <p>Jaipur-focused digital platform — 9K+ followers, 500K+ reach, viral content strategy with strong local audience engagement.</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-icon">🇮🇳</div>
+      <h3>Modi Ka Parivar</h3>
+      <p>Political & social digital platform built with targeted content strategy, high engagement and consistent audience growth.</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-icon">📸</div>
+      <h3>Product Shoots</h3>
+      <p>Fashion, lifestyle & local brand product shoots — creative direction, reels creation and promotional content.</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-icon">🤝</div>
+      <h3>Brand Collaborations</h3>
+      <p>Paid collaborations and promotional campaigns with multiple brands — helping them increase reach, engagement and visibility.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section>
+  <h2 class="section-title">Education</h2>
+  <p class="section-sub">Academic foundation behind my digital expertise.</p>
+
+  <ul class="edu-list">
+    <li>
+      <i class="fas fa-graduation-cap"></i>
+      <div>
+        <strong>MBA in Digital Marketing</strong>
+        Pursuing — 2026 to 2028
+      </div>
+    </li>
+    <li>
+      <i class="fas fa-university"></i>
+      <div>
+        <strong>Bachelor of Business Administration (BBA)</strong>
+        Completing in 2026
+      </div>
+    </li>
+    <li>
+      <i class="fas fa-certificate"></i>
+      <div>
+        <strong>Digital Marketing Course (Full Program)</strong>
+        Completed — 2026
+      </div>
+    </li>
+    <li>
+      <i class="fas fa-school"></i>
+      <div>
+        <strong>12th Commerce</strong>
+        Rajasthan Board
+      </div>
+    </li>
+  </ul>
 </section>
 
 <!-- CERTIFICATES -->
 <section style="text-align:center;">
-  <span class="section-tag">📜 Credentials</span>
   <h2 class="section-title">Certificates</h2>
   <p class="section-sub">View my learning progress and certificates.</p>
-
   <div class="hero-actions" style="justify-content:center;">
     <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="btn">
       <i class="fas fa-certificate"></i> View Certificates
@@ -117,10 +262,8 @@
 
 <!-- WHY WORK WITH ME -->
 <section>
-  <span class="section-tag">✅ Why Me</span>
   <h2 class="section-title">Why Work With Me</h2>
   <p class="section-sub">A premium mindset with real execution.</p>
-
   <div class="grid">
     <div class="card">
       <div class="icon"><i class="fas fa-lightbulb"></i></div>
@@ -129,8 +272,8 @@
     </div>
     <div class="card">
       <div class="icon"><i class="fas fa-chart-line"></i></div>
-      <h3>Growth Focused</h3>
-      <p>Every action is aligned to business results — not just vanity metrics.</p>
+      <h3>3+ Years Experience</h3>
+      <p>Real practical experience across SEO, Ads, Content & Web Design — not just theory.</p>
     </div>
     <div class="card">
       <div class="icon"><i class="fas fa-handshake"></i></div>
@@ -140,11 +283,8 @@
   </div>
 </section>
 
-<footer>
-  ©️ 2026 Rounak Arora • Digital Growth Expert
-</footer>
+<footer>©️ 2026 Rounak Arora • About</footer>
 
-<!-- MOBILE STICKY CTA -->
 <div class="sticky-cta">
   <span>Let's build something great 🚀</span>
   <a href="contact.html">Hire Me</a>
