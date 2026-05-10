@@ -527,27 +527,30 @@ footer { margin-top: 20px; padding: 35px 7%; text-align: center; color: var(--te
   }
 
   /* SIDE SLIDE MENU */
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: min(82vw, 340px);
-    height: 100vh;
-    background: rgba(2, 6, 23, 0.96);
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
-    border-left: 1px solid rgba(255,255,255,0.08);
-    padding: 100px 24px 40px;
-    gap: 14px;
-    z-index: 1100;
-    overflow-y: auto;
-    animation: slideMenu .28s ease forwards;
-    box-shadow:
-      -10px 0 40px rgba(0,0,0,0.35),
-      0 0 30px rgba(69,231,255,0.08);
-  }
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(82vw, 340px);
+  height: 100vh;
+  background: rgba(2, 6, 23, 0.96);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-left: 1px solid rgba(255,255,255,0.08);
+
+  /* ✅ ONLY CHANGED THIS */
+  padding: 70px 24px 40px;
+
+  gap: 14px;
+  z-index: 1100;
+  overflow-y: auto;
+  animation: slideMenu .28s ease forwards;
+  box-shadow:
+    -10px 0 40px rgba(0,0,0,0.35),
+    0 0 30px rgba(69,231,255,0.08);
+}
 
   @keyframes slideMenu {
     from {
