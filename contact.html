@@ -7,13 +7,70 @@
 <meta name="description" content="Contact Rounak Arora — Digital Marketing Expert in Jaipur. Get in touch for SEO, Google Ads, Social Media & Website Design services.">
 <meta property="og:title" content="Contact | Rounak Arora — Digital Growth Expert">
 <meta property="og:description" content="Ready to grow your brand? Let's connect. SEO, Ads, Social Media & Web Design.">
-<meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
-<meta property="og:url" content="https://rounakarora.vercel.app/contact.html">
+<meta property="og:image" content="https://rounakarora.netlify.app/insta.jpg">
+<meta property="og:url" content="https://rounakarora.netlify.app/contact.html">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#020617">
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Rounak Arora",
+  "url": "https://rounakarora.netlify.app/contact.html",
+  "description": "Contact Rounak Arora for Digital Marketing services.",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Rounak Arora",
+    "jobTitle": "Digital Growth Expert",
+    "telephone": "+917821857020",
+    "email": "rounakarora92@gmail.com",
+    "url": "https://rounakarora.netlify.app",
+    "sameAs": ["https://www.linkedin.com/in/rounakarora"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "addressCountry": "IN"
+    }
+  }
+}
+</script>
+
 <style>html,body{ background:#020617; }</style>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+.navbar    { z-index: 1200 !important; }
+.hamburger { z-index: 1300 !important; }
+.nav-links.open { z-index: 1250 !important; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+.footer-socials { display: flex; justify-content: center; gap: 16px; margin-top: 12px; }
+.footer-socials a { color: var(--text); font-size: 18px; transition: color 0.3s; text-decoration: none; }
+.footer-socials a:hover { color: var(--cyan); }
+.sticky-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(2,6,23,0.96); backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.9rem 1.5rem; align-items: center; justify-content: space-between;
+  z-index: 998; font-size: 14px; color: rgba(255,255,255,0.7);
+}
+.sticky-cta a {
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  color: #020617; padding: 0.55rem 1.25rem; border-radius: 50px;
+  font-weight: 700; font-size: 13px; text-decoration: none;
+  white-space: nowrap; box-shadow: 0 0 16px rgba(69,231,255,.35);
+}
+@media (max-width: 768px) {
+  .sticky-cta { display: flex; }
+  footer { padding-bottom: 5.5rem; }
+}
+</style>
 </head>
 <body>
 
@@ -39,10 +96,27 @@
   <p class="section-sub">Ready to grow your brand? Let's connect.</p>
   <div class="contact-wrap">
     <form id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="text" placeholder="Business / Brand Name">
-      <textarea placeholder="Tell me about your project"></textarea>
+      <label for="name" class="visually-hidden">Your Name</label>
+      <input id="name" type="text" name="name" placeholder="Your Name" required autocomplete="name">
+      <label for="email" class="visually-hidden">Your Email</label>
+      <input id="email" type="email" name="email" placeholder="Your Email" required autocomplete="email">
+      <label for="business" class="visually-hidden">Business / Brand Name</label>
+      <input id="business" type="text" name="business" placeholder="Business / Brand Name" autocomplete="organization">
+      <label for="service" class="visually-hidden">Service Needed</label>
+      <select id="service" name="service" style="width:100%;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,0.04);color:#fff;font-size:16px;outline:none;font-family:inherit;transition:border-color .2s;cursor:pointer;appearance:none;-webkit-appearance:none;">
+        <option value="" style="background:#020617;color:#9ca3af;">Select Service Needed</option>
+        <option value="Meta Ads" style="background:#020617;">Meta Ads (Facebook & Instagram)</option>
+        <option value="Google Ads" style="background:#020617;">Google Ads</option>
+        <option value="SEO" style="background:#020617;">SEO</option>
+        <option value="Social Media Marketing" style="background:#020617;">Social Media Marketing</option>
+        <option value="Social Media Management" style="background:#020617;">Social Media Management</option>
+        <option value="Website Design" style="background:#020617;">Website Design</option>
+        <option value="E-Commerce Growth" style="background:#020617;">E-Commerce Growth</option>
+        <option value="Branding" style="background:#020617;">Branding</option>
+        <option value="Other" style="background:#020617;">Other / Not Sure</option>
+      </select>
+      <label for="message" class="visually-hidden">Your Message</label>
+      <textarea id="message" name="message" placeholder="Tell me about your project" rows="5"></textarea>
       <button class="btn" type="submit">Send Message 🚀</button>
     </form>
     <div class="form-success" id="formSuccess">
@@ -59,34 +133,37 @@
     <div class="card">
       <div class="icon"><i class="fab fa-whatsapp"></i></div>
       <h3>WhatsApp</h3>
-      <p>Chat directly for quick response.</p>
-      <br>
-      <a href="https://wa.me/917821857020" target="_blank" class="btn">Chat Now</a>
+      <p>Chat directly for quick response. Usually reply within 1 hour.</p><br>
+      <a href="https://wa.me/917821857020" target="_blank" rel="noopener" class="btn">Chat Now</a>
     </div>
     <div class="card">
       <div class="icon"><i class="fas fa-envelope"></i></div>
       <h3>Email</h3>
-      <p>rounakarora92@gmail.com</p>
-      <br>
+      <p><a href="mailto:rounakarora92@gmail.com" style="color:var(--cyan);text-decoration:none;">rounakarora92@gmail.com</a></p><br>
       <a href="mailto:rounakarora92@gmail.com" class="btn">Send Email</a>
     </div>
     <div class="card">
       <div class="icon"><i class="fas fa-rocket"></i></div>
       <h3>Growth Call</h3>
-      <p>Discuss strategy and next steps.</p>
-      <br>
-      <a href="https://wa.me/917821857020" target="_blank" class="btn">Book Now</a>
+      <p>Book a free 15-minute strategy call to discuss your brand goals.</p><br>
+      <a href="https://wa.me/917821857020?text=Hi%20Rounak%2C%20I%20want%20to%20book%20a%20Growth%20Call" target="_blank" rel="noopener" class="btn">Book Now</a>
     </div>
   </div>
 </section>
 
 <footer>
-  ©️ 2026 Rounak Arora • Contact
+  <p>©️ 2026 Rounak Arora • Contact</p>
+  <div class="footer-socials">
+    <a href="https://wa.me/917821857020" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/gulabinagarii" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/rounakarora" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:rounakarora92@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
 </footer>
 
 <div class="sticky-cta">
   <span>Let's grow your brand 🚀</span>
-  <a href="https://wa.me/917821857020" target="_blank">WhatsApp Me</a>
+  <a href="https://wa.me/917821857020" target="_blank" rel="noopener">WhatsApp Me</a>
 </div>
 
 <script src="script.js"></script>
