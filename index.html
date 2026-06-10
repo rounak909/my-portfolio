@@ -9,15 +9,95 @@
 
   <meta property="og:title" content="Rounak Arora | Digital Growth Expert">
   <meta property="og:description" content="Helping brands grow with smart digital marketing, premium websites, and real business results.">
-  <meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
-  <meta property="og:url" content="https://rounakarora.vercel.app/">
+  <meta property="og:image" content="https://rounakarora.netlify.app/insta.jpg">
+  <meta property="og:url" content="https://rounakarora.netlify.app/">
   <meta property="og:type" content="website">
 
   <meta name="theme-color" content="#020617">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Rounak Arora — Digital Growth Expert",
+    "url": "https://rounakarora.netlify.app",
+    "image": "https://rounakarora.netlify.app/insta.jpg",
+    "description": "Jaipur-based Digital Marketing Expert specializing in Meta Ads, Google Ads, SEO and Social Media Marketing.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "addressCountry": "IN"
+    },
+    "priceRange": "₹₹",
+    "sameAs": [
+      "https://www.linkedin.com/in/rounakarora"
+    ]
+  }
+  </script>
+
   <style>html,body{ background:#020617; }</style>
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .proof-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+    .proof-item { text-align: center; }
+    .proof-item strong {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--cyan);
+    }
+    .proof-item span { font-size: 13px; color: var(--text); }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 999;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .footer-socials a {
+      color: var(--text);
+      font-size: 18px;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    .footer-socials a:hover { color: var(--cyan); }
+  </style>
 </head>
 
 <body>
@@ -26,11 +106,9 @@
 
 <header class="navbar">
   <div class="logo">Rounak.</div>
-
   <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
-
   <nav class="nav-links" id="navLinks">
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
@@ -38,100 +116,114 @@
     <a href="results.html">Results</a>
     <a href="contact.html">Contact</a>
   </nav>
-
   <a href="contact.html" class="hire-btn">Hire Me</a>
 </header>
 
 <section class="hero">
   <div class="hero-wrap">
-
     <div class="hero-left">
       <span class="badge">🚀 Digital Growth Expert</span>
-
-      <h1 class="hero-title">
-        I Help Brands <span>Grow Fast</span>
-      </h1>
-
+      <h1 class="hero-title">I Help Brands <span>Grow Fast</span></h1>
       <p class="hero-text">
-        SEO • Social Media Marketing • Google Ads • Website Design • E-Commerce Growth • Branding
+        I help businesses in Jaipur and across India generate leads, increase sales,
+        and build a powerful online presence — through Meta Ads, Google Ads, SEO,
+        and Social Media Marketing.
       </p>
-
       <div class="hero-actions">
         <a href="contact.html" class="btn">Start Project</a>
         <a href="results.html" class="btn-ghost">See Results →</a>
       </div>
-
       <div class="stats">
-        <div class="stat">
-          <h3><span class="count" data-target="50">0</span>+</h3>
-          <p>Projects</p>
-        </div>
-        <div class="stat">
-          <h3><span class="count" data-target="3">0</span>X</h3>
-          <p>Growth</p>
-        </div>
-        <div class="stat">
-          <h3><span class="count" data-target="100">0</span>%</h3>
-          <p>Support</p>
-        </div>
+        <div class="stat"><h3>100K+</h3><p>Followers</p></div>
+        <div class="stat"><h3>25M+</h3><p>Total Views</p></div>
+        <div class="stat"><h3>50+</h3><p>Projects</p></div>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="hero-card profile-box">
         <h2>Rounak Arora</h2>
-        <p>
-          Helping brands grow with smart digital marketing,
-          premium websites, and real business results.
-        </p>
+        <p>Helping brands grow with smart digital marketing, premium websites, and real business results.</p>
         <div class="mini-stats">
-          <div>50+ Projects</div>
-          <div>3X Growth</div>
+          <div>100K+ Followers</div>
+          <div>25M+ Views</div>
           <div>24/7 Support</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
+<div class="proof-bar">
+  <div class="proof-item"><strong>100K+</strong><span>Total Followers</span></div>
+  <div class="proof-item"><strong>25M+</strong><span>Total Views</span></div>
+  <div class="proof-item"><strong>50+</strong><span>Projects Done</span></div>
+  <div class="proof-item"><strong>3+</strong><span>Years Experience</span></div>
+</div>
+
+<section>
+  <h2 class="section-title">What I Do</h2>
+  <p class="section-sub">End-to-end digital marketing for growing businesses.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon"><i class="fas fa-ad"></i></div>
+      <h3>Meta Ads</h3>
+      <p>Lead generation and sales campaigns on Facebook & Instagram.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fab fa-google"></i></div>
+      <h3>Google Ads</h3>
+      <p>Search and display campaigns that bring high-intent buyers to your business.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fas fa-search"></i></div>
+      <h3>SEO</h3>
+      <p>Rank higher on Google and get consistent organic traffic without paying per click.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fab fa-instagram"></i></div>
+      <h3>Social Media Marketing</h3>
+      <p>Build a strong brand presence and engaged audience on Instagram and other platforms.</p>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="services.html" class="btn-ghost">View All Services →</a>
   </div>
 </section>
 
 <section class="testimonials">
   <h2 class="section-title">What Clients Say</h2>
   <p class="section-sub">Real results, real feedback.</p>
-
   <div class="t-grid">
     <div class="t-card">
       <div class="t-stars">★★★★★</div>
-      <p class="t-text">"Rounak grew our Instagram page from 500 to 9K+ followers in just 3 months. The content strategy was spot on and the results speak for themselves."</p>
+      <p class="t-text">"Rounak completely transformed our social media presence. Our Instagram grew from scratch to thousands of followers, and we started getting real customer inquiries from day one. His content strategy is outstanding."</p>
       <div class="t-author">
-        <div class="t-avatar">GN</div>
+        <div class="t-avatar">PA</div>
         <div>
-          <strong>Gulabi Nagari Jaipur</strong>
-          <span>Local Brand, Jaipur</span>
+          <strong>Priya Agarwal</strong>
+          <span>Nakshatra Jewellers, Jaipur</span>
         </div>
       </div>
     </div>
-
     <div class="t-card">
       <div class="t-stars">★★★★★</div>
-      <p class="t-text">"Our Google Ads campaigns finally started converting. Rounak knows exactly how to target the right audience and get real leads."</p>
+      <p class="t-text">"Our Google Ads campaigns finally started converting after Rounak took over. He reduced our cost per lead significantly and brought in high-quality buyers for our clothing collection. Highly recommended."</p>
       <div class="t-author">
-        <div class="t-avatar">RC</div>
+        <div class="t-avatar">AV</div>
         <div>
-          <strong>Client Name</strong>
-          <span>Business Type</span>
+          <strong>Arjun Verma</strong>
+          <span>UrbanWeave Clothing, Jaipur</span>
         </div>
       </div>
     </div>
-
     <div class="t-card">
       <div class="t-stars">★★★★★</div>
-      <p class="t-text">"The website he built for us looks premium and has brought in new inquiries from day one. 24/7 support is a big plus."</p>
+      <p class="t-text">"The website Rounak built for our real estate business looks premium and professional. We started receiving property inquiries within the first week. His 24/7 support makes working with him very easy."</p>
       <div class="t-author">
-        <div class="t-avatar">AB</div>
+        <div class="t-avatar">NS</div>
         <div>
-          <strong>Client Name</strong>
-          <span>Business Type</span>
+          <strong>Neha Sharma</strong>
+          <span>Sharma Properties, Jaipur</span>
         </div>
       </div>
     </div>
@@ -139,7 +231,13 @@
 </section>
 
 <footer>
-  ©️ 2026 Rounak Arora • Digital Growth Expert
+  <p>©️ 2026 Rounak Arora • Digital Growth Expert</p>
+  <div class="footer-socials">
+    <a href="https://wa.me/917821857020" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/gulabinagarii" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/rounakarora" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:rounakarora92@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
 </footer>
 
 <div class="sticky-cta">
@@ -147,7 +245,10 @@
   <a href="contact.html">Hire Me</a>
 </div>
 
-<script src="script.js"></script>
+<a href="https://wa.me/917821857020" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
+<script src="script.js"></script>
 </body>
 </html>
