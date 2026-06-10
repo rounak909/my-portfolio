@@ -1,12 +1,11 @@
 /* ===================================
-   SCRIPT.JS — FINAL FIXED VERSION
+   SCRIPT.JS — FINAL VERSION
 =================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      1. PARTICLE BACKGROUND
-     Mobile pe fewer particles (performance)
   ────────────────────────────────── */
   const canvas = document.getElementById("particles");
   if (canvas) {
@@ -36,8 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
       h = canvas.height = window.innerHeight;
       spawnParticles();
     }
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 200);
+    });
+
     resize();
-    window.addEventListener("resize", resize);
 
     function draw() {
       ctx.clearRect(0, 0, w, h);
@@ -74,11 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        cancelAnimationFrame(animFrameId);
-      } else {
-        draw();
-      }
+      if (document.hidden) cancelAnimationFrame(animFrameId);
+      else draw();
     });
 
     draw();
@@ -87,19 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      2. SCROLL REVEAL
-     Hero section pehle se visible rahega
   ────────────────────────────────── */
   const revealStyle = document.createElement("style");
   revealStyle.innerHTML = `
-    .hidden {
-      opacity: 0;
-      transform: translateY(36px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .hidden { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s ease; }
+    .show   { opacity: 1; transform: translateY(0); }
   `;
   document.head.appendChild(revealStyle);
 
@@ -111,19 +105,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll("section, .card, .result-box, .t-card").forEach(el => {
-    if (el.classList.contains("hero")) {
-      el.classList.add("show");
-      return;
-    }
+  document.querySelectorAll("section").forEach(el => {
+    if (el.classList.contains("hero")) { el.classList.add("show"); return; }
     el.classList.add("hidden");
     revealObserver.observe(el);
   });
 
+  const cardStyle = document.createElement("style");
+  cardStyle.innerHTML = `
+    .card-hidden { opacity: 0; transition: opacity .5s ease; }
+    .card-show   { opacity: 1; }
+  `;
+  document.head.appendChild(cardStyle);
+
+  const cardObserver = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (!entry.isIntersecting) return;
+      setTimeout(() => {
+        entry.target.classList.add("card-show");
+        entry.target.classList.remove("card-hidden");
+      }, i * 80);
+      cardObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll(".card, .result-box, .t-card").forEach(el => {
+    el.classList.add("card-hidden");
+    cardObserver.observe(el);
+  });
+
 
   /* ──────────────────────────────────
-     3. NAVBAR SCROLL HIDE (mobile only)
-     Menu open ho toh navbar hide na ho
+     3. NAVBAR SCROLL HIDE (mobile)
   ────────────────────────────────── */
   const navbar = document.querySelector(".navbar");
   if (navbar) {
@@ -146,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      4. ANIMATED STAT COUNTERS
-     .count and .rcount elements
   ────────────────────────────────── */
   function animateCounter(el, target, suffix) {
     let count = 0;
@@ -174,7 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ──────────────────────────────────
      5. HAMBURGER MENU
-     Uses id="navLinks" — matches all HTML files
   ────────────────────────────────── */
   const menuBtn  = document.getElementById("menuBtn");
   const navLinks = document.getElementById("navLinks");
@@ -184,10 +195,12 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.classList.remove("open");
     if (menuBtn) menuBtn.classList.remove("open");
     document.body.style.overflow = "";
+    if (navbar) navbar.style.transform = "translateY(0)";
   }
 
   if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => {
+    menuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
       const isOpen = navLinks.classList.toggle("open");
       menuBtn.classList.toggle("open");
       document.body.style.overflow = isOpen ? "hidden" : "";
@@ -200,19 +213,27 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") closeMenu();
     });
+
+    document.addEventListener("click", (e) => {
+      if (!navLinks.classList.contains("open")) return;
+      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
+    });
+
+    document.addEventListener("touchstart", (e) => {
+      if (!navLinks.classList.contains("open")) return;
+      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
+    }, { passive: true });
   }
 
 
   /* ──────────────────────────────────
      6. CONTACT FORM
-     Inline success — no alert()
-     Empty field validation with red border
   ────────────────────────────────── */
   const contactForm = document.getElementById("contactForm");
   const formSuccess = document.getElementById("formSuccess");
 
   if (contactForm && formSuccess) {
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       const inputs = contactForm.querySelectorAll("input, textarea");
@@ -227,9 +248,68 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       if (!valid) return;
 
-      contactForm.style.display = "none";
-      formSuccess.style.display = "block";
+      const submitBtn = contactForm.querySelector("button[type='submit']");
+      const originalText = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) { submitBtn.textContent = "Sending..."; submitBtn.disabled = true; }
+
+      try {
+        const formData = new FormData(contactForm);
+
+        const response = await fetch("https://formspree.io/f/xwvjlqjn", {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" }
+        });
+
+        contactForm.style.display = "none";
+        formSuccess.style.display = "block";
+
+      } catch (err) {
+        contactForm.style.display = "none";
+        formSuccess.style.display = "block";
+      } finally {
+        if (submitBtn) {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      }
     });
   }
+
+
+  /* ──────────────────────────────────
+     7. WHATSAPP TRACKING
+  ────────────────────────────────── */
+  const waBtn = document.querySelector(".whatsapp-float");
+  if (waBtn) {
+    waBtn.addEventListener("click", () => {
+      if (typeof gtag !== "undefined") {
+        gtag("event", "whatsapp_click", {
+          event_category: "Contact",
+          event_label: "WhatsApp Float Button"
+        });
+      }
+
+      if (typeof fbq !== "undefined") {
+        fbq("track", "Contact");
+      }
+    });
+  }
+
+
+  /* ──────────────────────────────────
+     8. ACTIVE NAV LINK
+  ────────────────────────────────── */
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    } else if (link.classList.contains("active") && linkPage !== currentPage) {
+      link.classList.remove("active");
+    }
+  });
 
 }); // end DOMContentLoaded
