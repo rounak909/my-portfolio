@@ -7,10 +7,28 @@
 <meta name="description" content="Real results by Rounak Arora — Founder of Gulabi Nagari Jaipur & Modi Ka Parivar. See live Instagram growth, brand work and portfolio.">
 <meta property="og:title" content="Results & Growth | Rounak Arora">
 <meta property="og:description" content="Real digital growth — Instagram pages, brand collaborations & content portfolio by Rounak Arora.">
-<meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
-<meta property="og:url" content="https://rounakarora.vercel.app/results.html">
+<meta property="og:image" content="https://rounakarora.netlify.app/insta.jpg">
+<meta property="og:url" content="https://rounakarora.netlify.app/results.html">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#020617">
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "Results & Growth — Rounak Arora",
+  "url": "https://rounakarora.netlify.app/results.html",
+  "description": "Real digital marketing results by Rounak Arora.",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Rounak Arora",
+    "jobTitle": "Digital Growth Expert",
+    "url": "https://rounakarora.netlify.app"
+  }
+}
+</script>
+
 <style>html,body{ background:#020617; }</style>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,29 +37,16 @@
 .hamburger { z-index: 1300 !important; }
 .nav-links.open { z-index: 1250 !important; }
 
-.insta-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 2rem;
-}
+.insta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 2rem; }
 .insta-card {
-  background: var(--glass);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 2rem;
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: .35s;
+  background: var(--glass); border: 1px solid var(--line);
+  border-radius: 22px; padding: 2rem; text-decoration: none; color: #fff;
+  display: flex; flex-direction: column; gap: 14px; transition: .35s;
 }
 .insta-card:hover { transform: translateY(-8px); box-shadow: 0 0 32px rgba(69,231,255,.18); border-color: rgba(69,231,255,.3); }
 .insta-card-header { display: flex; align-items: center; gap: 14px; }
 .insta-icon {
-  width: 52px; height: 52px;
-  border-radius: 16px;
+  width: 52px; height: 52px; border-radius: 16px;
   background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   display: flex; align-items: center; justify-content: center;
   font-size: 22px; color: #fff; flex-shrink: 0;
@@ -56,65 +61,53 @@
   color: rgba(255,255,255,0.7);
 }
 .insta-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--cyan); margin-top: auto; }
+.insta-stats { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 4px; }
+.insta-stat { text-align: center; }
+.insta-stat strong { display: block; font-size: 1.3rem; font-weight: 800; color: var(--cyan); }
+.insta-stat span { font-size: 11px; color: var(--text); }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 2rem;
-}
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 2rem; }
 .portfolio-card {
-  background: var(--glass);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: .35s;
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  background: var(--glass); border: 1px solid var(--line);
+  border-radius: 18px; padding: 1.5rem; text-align: center;
+  transition: .35s; text-decoration: none; color: #fff;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
 }
 .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 0 26px rgba(69,231,255,.18); border-color: rgba(69,231,255,.3); }
-.portfolio-card i  { font-size: 1.8rem; color: var(--cyan); }
+.portfolio-card i { font-size: 1.8rem; color: var(--cyan); }
 .portfolio-card h3 { font-size: 15px; font-weight: 700; }
-.portfolio-card p  { font-size: 13px; color: var(--text); }
+.portfolio-card p { font-size: 13px; color: var(--text); }
+.portfolio-note { text-align: center; margin-top: 1rem; font-size: 13px; color: var(--text); }
+.portfolio-note a { color: var(--cyan); text-decoration: none; font-weight: 600; }
 
 .results-cta { text-align: center; padding: 3rem 7% 5rem; }
 .results-cta h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 0.75rem; }
-.results-cta p  { color: var(--text); font-size: 17px; margin-bottom: 2rem; line-height: 1.7; }
+.results-cta p { color: var(--text); font-size: 17px; margin-bottom: 2rem; line-height: 1.7; }
 .results-cta .hero-actions { justify-content: center; }
 
+.footer-socials { display: flex; justify-content: center; gap: 16px; margin-top: 12px; }
+.footer-socials a { color: var(--text); font-size: 18px; transition: color 0.3s; text-decoration: none; }
+.footer-socials a:hover { color: var(--cyan); }
+
 .sticky-cta {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(2,6,23,0.96);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 0.9rem 1.5rem;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 998;
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
+  display: none; position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(2,6,23,0.96); backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line); padding: 0.9rem 1.5rem;
+  align-items: center; justify-content: space-between;
+  z-index: 998; font-size: 14px; color: rgba(255,255,255,0.7);
 }
 .sticky-cta a {
   background: linear-gradient(90deg, var(--cyan), var(--blue));
-  color: #020617;
-  padding: 0.55rem 1.25rem;
-  border-radius: 50px;
-  font-weight: 700; font-size: 13px;
-  text-decoration: none; white-space: nowrap;
-  box-shadow: 0 0 16px rgba(69,231,255,.35);
+  color: #020617; padding: 0.55rem 1.25rem; border-radius: 50px;
+  font-weight: 700; font-size: 13px; text-decoration: none;
+  white-space: nowrap; box-shadow: 0 0 16px rgba(69,231,255,.35);
 }
 @media (max-width: 768px) {
   .sticky-cta { display: flex; }
   footer { padding-bottom: 5.5rem; }
   .insta-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .insta-stats { gap: 12px; }
 }
 @media (max-width: 480px) {
   .portfolio-grid { grid-template-columns: 1fr; }
@@ -145,19 +138,17 @@
   <p class="section-sub">Real platforms. Real audiences. Real growth — see it live.</p>
 
   <div class="insta-grid">
-    <a href="https://www.instagram.com/gulabinagarii?igsh=eTdsaXFrY3AwcDM3&utm_source=qr"
-       target="_blank" class="insta-card">
+    <a href="https://www.instagram.com/gulabinagarii?igsh=eTdsaXFrY3AwcDM3&utm_source=qr" target="_blank" class="insta-card">
       <div class="insta-card-header">
         <div class="insta-icon"><i class="fab fa-instagram"></i></div>
-        <div class="insta-card-title">
-          <h3>Gulabi Nagari Jaipur</h3>
-          <span>@gulabinagarii</span>
-        </div>
+        <div class="insta-card-title"><h3>Gulabi Nagari Jaipur</h3><span>@gulabinagarii</span></div>
       </div>
-      <p class="insta-desc">
-        Jaipur-focused digital platform covering local culture, food spots, festivals,
-        celebrity visits and city updates. Built from scratch with 100% organic content strategy.
-      </p>
+      <div class="insta-stats">
+        <div class="insta-stat"><strong>30K+</strong><span>Followers</span></div>
+        <div class="insta-stat"><strong>15M+</strong><span>Views</span></div>
+        <div class="insta-stat"><strong>100%</strong><span>Organic</span></div>
+      </div>
+      <p class="insta-desc">Jaipur-focused digital platform covering local culture, food spots, festivals, celebrity visits and city updates. Built from scratch with 100% organic content strategy.</p>
       <div class="insta-tags">
         <span class="insta-tag">📍 Jaipur</span>
         <span class="insta-tag">🎭 Culture</span>
@@ -165,24 +156,20 @@
         <span class="insta-tag">🎉 Festivals</span>
         <span class="insta-tag">🤝 Collaborations</span>
       </div>
-      <div class="insta-cta">
-        <i class="fab fa-instagram"></i> View Live on Instagram →
-      </div>
+      <div class="insta-cta"><i class="fab fa-instagram"></i> View Live on Instagram →</div>
     </a>
 
-    <a href="https://www.instagram.com/modi_ka_parivarr?igsh=bzl6dWp3emJiaHh4&utm_source=qr"
-       target="_blank" class="insta-card">
+    <a href="https://www.instagram.com/modi_ka_parivarr?igsh=bzl6dWp3emJiaHh4&utm_source=qr" target="_blank" class="insta-card">
       <div class="insta-card-header">
         <div class="insta-icon"><i class="fab fa-instagram"></i></div>
-        <div class="insta-card-title">
-          <h3>Modi Ka Parivar</h3>
-          <span>@modi_ka_parivarr</span>
-        </div>
+        <div class="insta-card-title"><h3>Modi Ka Parivar</h3><span>@modi_ka_parivarr</span></div>
       </div>
-      <p class="insta-desc">
-        India's political and social update platform — reels, public reactions, news and
-        supporter community. Built with consistent viral content and strong organic engagement.
-      </p>
+      <div class="insta-stats">
+        <div class="insta-stat"><strong>75K+</strong><span>Followers</span></div>
+        <div class="insta-stat"><strong>5M+</strong><span>Views</span></div>
+        <div class="insta-stat"><strong>High</strong><span>Engagement</span></div>
+      </div>
+      <p class="insta-desc">India's political and social update platform — reels, public reactions, news and supporter community. Built with consistent viral content and strong organic engagement.</p>
       <div class="insta-tags">
         <span class="insta-tag">🇮🇳 Political</span>
         <span class="insta-tag">🎬 Reels</span>
@@ -190,9 +177,7 @@
         <span class="insta-tag">👥 Community</span>
         <span class="insta-tag">📣 Promotions</span>
       </div>
-      <div class="insta-cta">
-        <i class="fab fa-instagram"></i> View Live on Instagram →
-      </div>
+      <div class="insta-cta"><i class="fab fa-instagram"></i> View Live on Instagram →</div>
     </a>
   </div>
 </section>
@@ -201,21 +186,9 @@
   <h2 class="section-title">What I Deliver</h2>
   <p class="section-sub">Consistent results across every service I offer.</p>
   <div class="grid">
-    <div class="card">
-      <div class="icon"><i class="fas fa-users"></i></div>
-      <h3>Audience Growth</h3>
-      <p>Organic follower growth through targeted content strategy, reels and consistent engagement — no shortcuts.</p>
-    </div>
-    <div class="card">
-      <div class="icon"><i class="fas fa-fire"></i></div>
-      <h3>Viral Content</h3>
-      <p>Reels, posts and campaigns designed for maximum reach — getting your brand in front of new audiences every week.</p>
-    </div>
-    <div class="card">
-      <div class="icon"><i class="fas fa-handshake"></i></div>
-      <h3>Brand Collaborations</h3>
-      <p>Paid promotions and brand partnerships managed professionally — delivering real value for both sides.</p>
-    </div>
+    <div class="card"><div class="icon"><i class="fas fa-users"></i></div><h3>Audience Growth</h3><p>Built Gulabi Nagari from 0 to 30K+ followers through organic content strategy — no paid followers, no shortcuts, just real growth.</p></div>
+    <div class="card"><div class="icon"><i class="fas fa-fire"></i></div><h3>Viral Content</h3><p>Generated 25M+ total views across platforms through reels and posts — getting brands in front of new audiences consistently every week.</p></div>
+    <div class="card"><div class="icon"><i class="fas fa-handshake"></i></div><h3>Brand Collaborations</h3><p>Managed paid promotions and brand partnerships delivering real visibility, audience trust, and business value for partnered brands.</p></div>
   </div>
 </section>
 
@@ -223,25 +196,14 @@
   <h2 class="section-title">My Portfolio</h2>
   <p class="section-sub">Browse my work — shoots, reels, ads & more.</p>
   <div class="portfolio-grid">
-    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card">
-      <i class="fas fa-camera"></i><h3>Brand Shoots</h3><p>Product & lifestyle photography</p>
-    </a>
-    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card">
-      <i class="fas fa-video"></i><h3>Reels & Content</h3><p>Viral reels & brand content</p>
-    </a>
-    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card">
-      <i class="fas fa-chart-bar"></i><h3>Ads & Campaigns</h3><p>Meta & Google Ads results</p>
-    </a>
-    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card">
-      <i class="fas fa-laptop-code"></i><h3>Website Work</h3><p>Websites & landing pages</p>
-    </a>
-    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card">
-      <i class="fas fa-certificate"></i><h3>Certificates</h3><p>Courses & certifications</p>
-    </a>
-    <a href="contact.html" class="portfolio-card">
-      <i class="fas fa-handshake"></i><h3>Work With Me</h3><p>Start your project today</p>
-    </a>
+    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card"><i class="fas fa-camera"></i><h3>Brand Shoots</h3><p>Product & lifestyle photography</p></a>
+    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card"><i class="fas fa-video"></i><h3>Reels & Content</h3><p>Viral reels & brand content</p></a>
+    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card"><i class="fas fa-chart-bar"></i><h3>Ads & Campaigns</h3><p>Meta & Google Ads results</p></a>
+    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card"><i class="fas fa-laptop-code"></i><h3>Website Work</h3><p>Websites & landing pages</p></a>
+    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="portfolio-card"><i class="fas fa-certificate"></i><h3>Certificates</h3><p>Courses & certifications</p></a>
+    <a href="contact.html" class="portfolio-card"><i class="fas fa-handshake"></i><h3>Work With Me</h3><p>Start your project today</p></a>
   </div>
+  <p class="portfolio-note">All work samples are in one combined portfolio. <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank">Open full portfolio →</a></p>
 </section>
 
 <section class="results-cta">
@@ -253,7 +215,15 @@
   </div>
 </section>
 
-<footer>©️ 2026 Rounak Arora • Results</footer>
+<footer>
+  <p>©️ 2026 Rounak Arora • Results</p>
+  <div class="footer-socials">
+    <a href="https://wa.me/917821857020" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/gulabinagarii" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/rounakarora" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:rounakarora92@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+</footer>
 
 <div class="sticky-cta">
   <span>Want results like these? 📈</span>
