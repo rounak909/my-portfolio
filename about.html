@@ -7,15 +7,36 @@
 <meta name="description" content="Rounak Arora — Jaipur-based Digital Marketer & Content Creator with 3+ years experience. Founder of Gulabi Nagari & Modi Ka Parivar.">
 <meta property="og:title" content="About | Rounak Arora — Digital Growth Expert">
 <meta property="og:description" content="3+ years experience, Founder of 2 digital platforms, BBA + MBA in Digital Marketing.">
-<meta property="og:image" content="https://rounakarora.vercel.app/insta.jpg">
-<meta property="og:url" content="https://rounakarora.vercel.app/about.html">
+<meta property="og:image" content="https://rounakarora.netlify.app/insta.jpg">
+<meta property="og:url" content="https://rounakarora.netlify.app/about.html">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#020617">
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rounak Arora",
+  "jobTitle": "Digital Growth Expert",
+  "description": "Jaipur-based Digital Marketer & Content Creator with 3+ years experience.",
+  "url": "https://rounakarora.netlify.app",
+  "image": "https://rounakarora.netlify.app/insta.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jaipur",
+    "addressRegion": "Rajasthan",
+    "addressCountry": "IN"
+  },
+  "knowsAbout": ["Meta Ads", "Google Ads", "SEO", "Social Media Marketing", "Content Creation", "Web Design"],
+  "sameAs": ["https://www.linkedin.com/in/rounakarora"]
+}
+</script>
+
 <style>html,body{ background:#020617; }</style>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/* FIX: Menu overlay above all content */
 .navbar    { z-index: 1200 !important; }
 .hamburger { z-index: 1300 !important; }
 .nav-links.open { z-index: 1250 !important; }
@@ -23,85 +44,58 @@
 .about-bio h2 { font-size: clamp(1.6rem, 4vw, 2.6rem); margin-bottom: 15px; line-height: 1.2; }
 .about-bio p  { line-height: 1.9; color: var(--text); margin-bottom: 20px; font-size: clamp(15px, 2vw, 17px); }
 
-/* Expertise tags */
-.expertise-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 24px;
-}
+.expertise-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
 .tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 999px;
   border: 1px solid rgba(69,231,255,0.25);
   background: rgba(69,231,255,0.07);
-  color: var(--cyan);
-  font-size: 13px;
-  font-weight: 600;
+  color: var(--cyan); font-size: 13px; font-weight: 600;
 }
 
-/* Brand cards */
-.brand-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 2rem;
-}
+.brand-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 2rem; }
 .brand-card {
-  background: var(--glass);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 1.5rem;
-  transition: .35s;
+  background: var(--glass); border: 1px solid var(--line);
+  border-radius: 18px; padding: 1.5rem; transition: .35s;
 }
 .brand-card:hover { transform: translateY(-6px); box-shadow: 0 0 26px rgba(69,231,255,.15); }
 .brand-card h3 { font-size: 18px; margin-bottom: 8px; color: #fff; }
 .brand-card p  { font-size: 14px; color: var(--text); line-height: 1.6; }
 .brand-icon { font-size: 1.5rem; margin-bottom: 10px; }
 
-/* Education */
 .edu-list { list-style: none; display: grid; gap: 14px; margin-top: 1.5rem; }
 .edu-list li {
-  background: var(--glass);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 15px;
-  color: var(--text);
+  background: var(--glass); border: 1px solid var(--line);
+  border-radius: 14px; padding: 16px 20px;
+  display: flex; align-items: center; gap: 14px;
+  font-size: 15px; color: var(--text);
 }
 .edu-list li i { color: var(--cyan); font-size: 18px; flex-shrink: 0; }
 .edu-list li strong { color: #fff; display: block; margin-bottom: 3px; }
 
+.cert-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px; margin: 1.5rem auto; max-width: 900px;
+}
+.cert-grid img { width: 100%; border-radius: 14px; border: 1px solid var(--line); transition: .35s; }
+.cert-grid img:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(69,231,255,.15); }
+
+.footer-socials { display: flex; justify-content: center; gap: 16px; margin-top: 12px; }
+.footer-socials a { color: var(--text); font-size: 18px; transition: color 0.3s; text-decoration: none; }
+.footer-socials a:hover { color: var(--cyan); }
+
 .sticky-cta {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(2,6,23,0.96);
-  backdrop-filter: blur(12px);
+  display: none; position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(2,6,23,0.96); backdrop-filter: blur(12px);
   border-top: 1px solid rgba(255,255,255,0.1);
-  padding: 0.9rem 1.5rem;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 998;
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
+  padding: 0.9rem 1.5rem; align-items: center; justify-content: space-between;
+  z-index: 998; font-size: 14px; color: rgba(255,255,255,0.7);
 }
 .sticky-cta a {
   background: linear-gradient(90deg, var(--cyan), var(--blue));
-  color: #020617;
-  padding: 0.55rem 1.25rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 13px;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 0 16px rgba(69,231,255,.35);
+  color: #020617; padding: 0.55rem 1.25rem; border-radius: 50px;
+  font-weight: 700; font-size: 13px; text-decoration: none;
+  white-space: nowrap; box-shadow: 0 0 16px rgba(69,231,255,.35);
 }
 @media (max-width: 768px) {
   .sticky-cta { display: flex; }
@@ -112,6 +106,7 @@
   .about-bio .stats { grid-template-columns: repeat(3,1fr); }
   .brand-grid { grid-template-columns: 1fr; }
   .expertise-tags { justify-content: center; }
+  .cert-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .about-bio .stats { grid-template-columns: 1fr; }
@@ -135,12 +130,10 @@
   <a href="contact.html" class="hire-btn">Hire Me</a>
 </header>
 
-<!-- ABOUT HERO -->
 <section>
   <div class="glow one"></div>
   <h1 class="section-title">About Me</h1>
   <p class="section-sub">The mind behind growth-focused digital strategies.</p>
-
   <div class="hero-wrap">
     <div class="hero-card profile-box">
       <h2>Rounak Arora</h2>
@@ -151,7 +144,6 @@
         <div>🚀 Founder of 2 Digital Platforms</div>
       </div>
     </div>
-
     <div class="about-bio">
       <div class="badge">👋 Hello, I'm Rounak</div>
       <h2>Digital Marketer & Content Creator</h2>
@@ -161,7 +153,6 @@
         & <strong style="color:#fff">Modi Ka Parivar</strong> — I build platforms focused on
         audience engagement, viral content, and brand promotions.
       </p>
-
       <div class="expertise-tags">
         <span class="tag"><i class="fab fa-instagram"></i> Instagram Growth</span>
         <span class="tag"><i class="fas fa-video"></i> Reels & Content</span>
@@ -172,7 +163,6 @@
         <span class="tag"><i class="fas fa-laptop-code"></i> Web Design</span>
         <span class="tag"><i class="fas fa-cart-shopping"></i> E-Commerce</span>
       </div>
-
       <div class="stats">
         <div class="stat"><h3>3+</h3><p>Years Experience</p></div>
         <div class="stat"><h3>2</h3><p>Platforms Founded</p></div>
@@ -182,21 +172,19 @@
   </div>
 </section>
 
-<!-- BRAND WORK -->
 <section>
   <h2 class="section-title">Brand Work & Platforms</h2>
   <p class="section-sub">Platforms I founded and brands I've worked with.</p>
-
   <div class="brand-grid">
     <div class="brand-card">
       <div class="brand-icon">🌸</div>
       <h3>Gulabi Nagari Jaipur</h3>
-      <p>Jaipur-focused digital platform — 9K+ followers, 500K+ reach, viral content strategy with strong local audience engagement.</p>
+      <p>Jaipur-focused digital platform — 30K+ followers, 15M+ views, viral content strategy with strong local audience engagement.</p>
     </div>
     <div class="brand-card">
       <div class="brand-icon">🇮🇳</div>
       <h3>Modi Ka Parivar</h3>
-      <p>Political & social digital platform built with targeted content strategy, high engagement and consistent audience growth.</p>
+      <p>Political & social digital platform — 75K+ followers, 5M+ views. Built with targeted content strategy, high engagement and consistent audience growth.</p>
     </div>
     <div class="brand-card">
       <div class="brand-icon">📸</div>
@@ -211,79 +199,52 @@
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section>
   <h2 class="section-title">Education</h2>
   <p class="section-sub">Academic foundation behind my digital expertise.</p>
-
   <ul class="edu-list">
-    <li>
-      <i class="fas fa-graduation-cap"></i>
-      <div>
-        <strong>MBA in Digital Marketing</strong>
-        Pursuing — 2026 to 2028
-      </div>
-    </li>
-    <li>
-      <i class="fas fa-university"></i>
-      <div>
-        <strong>Bachelor of Business Administration (BBA)</strong>
-        Completing in 2026
-      </div>
-    </li>
-    <li>
-      <i class="fas fa-certificate"></i>
-      <div>
-        <strong>Digital Marketing Course (Full Program)</strong>
-        Completed — 2026
-      </div>
-    </li>
-    <li>
-      <i class="fas fa-school"></i>
-      <div>
-        <strong>12th Commerce</strong>
-        Rajasthan Board
-      </div>
-    </li>
+    <li><i class="fas fa-certificate"></i><div><strong>Digital Marketing Course (Full Program) ✅</strong>Completed — 2026</div></li>
+    <li><i class="fas fa-university"></i><div><strong>Bachelor of Business Administration (BBA)</strong>Final Year — Completing in 2026</div></li>
+    <li><i class="fas fa-graduation-cap"></i><div><strong>MBA in Digital Marketing</strong>Starting — 2026 to 2028</div></li>
+    <li><i class="fas fa-school"></i><div><strong>12th Commerce</strong>Rajasthan Board</div></li>
   </ul>
 </section>
 
-<!-- CERTIFICATES -->
 <section style="text-align:center;">
   <h2 class="section-title">Certificates</h2>
   <p class="section-sub">View my learning progress and certificates.</p>
-  <div class="hero-actions" style="justify-content:center;">
-    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" class="btn">
-      <i class="fas fa-certificate"></i> View Certificates
+  <div class="cert-grid">
+    <img src="images/cert-1.webp" alt="Digital Marketing Certificate - Rounak Arora" loading="lazy">
+    <img src="images/cert-2.webp" alt="Google Ads Certificate - Rounak Arora" loading="lazy">
+    <img src="images/cert-3.webp" alt="SEO Certificate - Rounak Arora" loading="lazy">
+  </div>
+  <div class="hero-actions" style="justify-content:center; margin-top: 1.5rem;">
+    <a href="https://drive.google.com/drive/folders/1wGhh7GTMxfULWhV5goTDNR6jnJ4wUXcn" target="_blank" rel="noopener" class="btn">
+      <i class="fas fa-certificate"></i> View All Certificates
     </a>
     <a href="contact.html" class="btn-ghost">Work With Me →</a>
   </div>
 </section>
 
-<!-- WHY WORK WITH ME -->
 <section>
   <h2 class="section-title">Why Work With Me</h2>
   <p class="section-sub">A premium mindset with real execution.</p>
   <div class="grid">
-    <div class="card">
-      <div class="icon"><i class="fas fa-lightbulb"></i></div>
-      <h3>Creative Strategy</h3>
-      <p>Fresh ideas that stand out in the market and actually get results.</p>
-    </div>
-    <div class="card">
-      <div class="icon"><i class="fas fa-chart-line"></i></div>
-      <h3>3+ Years Experience</h3>
-      <p>Real practical experience across SEO, Ads, Content & Web Design — not just theory.</p>
-    </div>
-    <div class="card">
-      <div class="icon"><i class="fas fa-handshake"></i></div>
-      <h3>Long-Term Support</h3>
-      <p>I build relationships, not just projects. Always here when you need me.</p>
-    </div>
+    <div class="card"><div class="icon"><i class="fas fa-lightbulb"></i></div><h3>Creative Strategy</h3><p>Fresh ideas that stand out in the market and actually get results.</p></div>
+    <div class="card"><div class="icon"><i class="fas fa-chart-line"></i></div><h3>3+ Years Experience</h3><p>Real practical experience across SEO, Ads, Content & Web Design — not just theory.</p></div>
+    <div class="card"><div class="icon"><i class="fas fa-handshake"></i></div><h3>Long-Term Support</h3><p>I build relationships, not just projects. Always here when you need me.</p></div>
   </div>
 </section>
 
-<footer>©️ 2026 Rounak Arora • About</footer>
+<footer>
+  <p>©️ 2026 Rounak Arora • About</p>
+  <div class="footer-socials">
+    <a href="https://wa.me/917821857020" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/gulabinagarii" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/rounakarora" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:rounakarora92@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+</footer>
 
 <div class="sticky-cta">
   <span>Let's build something great 🚀</span>
