@@ -4,22 +4,25 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+  const isMobileDevice = window.matchMedia("(max-width: 768px)").matches;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   /* ──────────────────────────────────
-     1. PARTICLE BACKGROUND
+     1. PARTICLE BACKGROUND (Desktop only)
   ────────────────────────────────── */
   const canvas = document.getElementById("particles");
-  if (canvas) {
-    const ctx = canvas.getContext("2d");
+  if (canvas && !isMobileDevice && !prefersReducedMotion) {
+    const ctx = canvas.getContext("2d", { alpha: true });
     let particles = [];
     let w, h;
     let animFrameId;
-
-    const isMobile = () => window.innerWidth <= 768;
+    let lastFrameTime = 0;
+    const FRAME_INTERVAL = 1000 / 30;
+    const linkDistSq = 120 * 120;
 
     function spawnParticles() {
       particles = [];
-      const count = isMobile() ? 30 : 70;
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < 40; i++) {
         particles.push({
           x:  Math.random() * w,
           y:  Math.random() * h,
@@ -40,63 +43,66 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(resize, 200);
-    });
+    }, { passive: true });
 
     resize();
 
-    function draw() {
+    function draw(currentTime) {
+      animFrameId = requestAnimationFrame(draw);
+      const delta = currentTime - lastFrameTime;
+      if (delta < FRAME_INTERVAL) return;
+      lastFrameTime = currentTime - (delta % FRAME_INTERVAL);
+
       ctx.clearRect(0, 0, w, h);
-      const linkDist = isMobile() ? 80 : 120;
 
       for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > w) p.dx *= -1;
+        if (p.y < 0 || p.y > h) p.dy *= -1;
+      }
+
+      ctx.strokeStyle = "rgba(69,231,255,0.12)";
+      ctx.lineWidth = 0.6;
+      for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
-          const dx   = particles[i].x - particles[j].x;
-          const dy   = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < linkDist) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          if (dx * dx + dy * dy < linkDistSq) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(69,231,255,${0.12 * (1 - dist / linkDist)})`;
-            ctx.lineWidth   = 0.6;
             ctx.stroke();
           }
         }
       }
 
-      particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > w) p.dx *= -1;
-        if (p.y < 0 || p.y > h) p.dy *= -1;
+      ctx.fillStyle = "rgba(69,231,255,0.65)";
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(69,231,255,0.65)";
         ctx.fill();
-      });
-
-      animFrameId = requestAnimationFrame(draw);
+      }
     }
 
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) cancelAnimationFrame(animFrameId);
-      else draw();
+      if (document.hidden) {
+        cancelAnimationFrame(animFrameId);
+      } else {
+        lastFrameTime = performance.now();
+        animFrameId = requestAnimationFrame(draw);
+      }
     });
 
-    draw();
+    animFrameId = requestAnimationFrame(draw);
   }
 
 
   /* ──────────────────────────────────
      2. SCROLL REVEAL
   ────────────────────────────────── */
-  const revealStyle = document.createElement("style");
-  revealStyle.innerHTML = `
-    .hidden { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s ease; }
-    .show   { opacity: 1; transform: translateY(0); }
-  `;
-  document.head.appendChild(revealStyle);
-
   const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -110,13 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
     el.classList.add("hidden");
     revealObserver.observe(el);
   });
-
-  const cardStyle = document.createElement("style");
-  cardStyle.innerHTML = `
-    .card-hidden { opacity: 0; transition: opacity .5s ease; }
-    .card-show   { opacity: 1; }
-  `;
-  document.head.appendChild(cardStyle);
 
   const cardObserver = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
@@ -141,18 +140,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   if (navbar) {
     let lastScroll = 0;
-    window.addEventListener("scroll", () => {
-      if (window.innerWidth > 768) return;
-      const navLinks = document.getElementById("navLinks");
-      if (navLinks && navLinks.classList.contains("open")) return;
+    let ticking = false;
+    let isMobileView = window.matchMedia("(max-width: 768px)").matches;
+    navbar.style.transition = "transform 0.3s ease";
+
+    window.matchMedia("(max-width: 768px)").addEventListener("change", (e) => {
+      isMobileView = e.matches;
+      if (!isMobileView) navbar.style.transform = "translateY(0)";
+    });
+
+    function updateNavbar() {
+      ticking = false;
+      if (!isMobileView) return;
+      const navLinksEl = document.getElementById("navLinks");
+      if (navLinksEl && navLinksEl.classList.contains("open")) return;
       const current = window.scrollY;
-      if (current > lastScroll && current > 80) {
-        navbar.style.transform  = "translateY(-100%)";
-        navbar.style.transition = "transform 0.3s ease";
-      } else {
-        navbar.style.transform = "translateY(0)";
-      }
+      navbar.style.transform = (current > lastScroll && current > 80)
+        ? "translateY(-100%)"
+        : "translateY(0)";
       lastScroll = current;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(updateNavbar);
+        ticking = true;
+      }
     }, { passive: true });
   }
 
@@ -161,13 +174,19 @@ document.addEventListener("DOMContentLoaded", function () {
      4. ANIMATED STAT COUNTERS
   ────────────────────────────────── */
   function animateCounter(el, target, suffix) {
-    let count = 0;
-    const step  = Math.max(1, Math.ceil(target / 50));
-    const timer = setInterval(() => {
-      count = Math.min(count + step, target);
-      el.textContent = count + (suffix || "");
-      if (count >= target) clearInterval(timer);
-    }, 35);
+    const duration = 1500;
+    const startTime = performance.now();
+    function update(currentTime) {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(target * eased) + (suffix || "");
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target + (suffix || "");
+      }
+    }
+    requestAnimationFrame(update);
   }
 
   const counterObserver = new IntersectionObserver(entries => {
@@ -240,10 +259,10 @@ document.addEventListener("DOMContentLoaded", function () {
       let valid = true;
       inputs.forEach(inp => {
         if (!inp.value.trim()) {
-          inp.style.borderColor = "rgba(255, 80, 80, 0.6)";
+          inp.classList.add("error");
           valid = false;
         } else {
-          inp.style.borderColor = "";
+          inp.classList.remove("error");
         }
       });
       if (!valid) return;
