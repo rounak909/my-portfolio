@@ -1,5 +1,5 @@
 /* ===================================
-   SCRIPT.JS — FINAL VERSION
+   SCRIPT.JS — FINAL VERSION (SPEED OPTIMIZED)
 =================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -314,21 +314,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-
-  /* ──────────────────────────────────
-     8. ACTIVE NAV LINK
-  ────────────────────────────────── */
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    const linkPage = link.getAttribute("href");
-
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    } else if (link.classList.contains("active") && linkPage !== currentPage) {
-      link.classList.remove("active");
-    }
-  });
 
 }); // end DOMContentLoaded
