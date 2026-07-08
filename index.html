@@ -55,9 +55,14 @@
   <link rel="apple-touch-icon" href="images/favicon.png">
   
   <!-- Performance: Preconnect & DNS Prefetch -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://wa.me">
+  
+  <!-- Google Fonts (loaded directly for faster rendering) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
   
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -130,7 +135,10 @@
   <style>html,body{ background:#020617; }</style>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Font Awesome loaded asynchronously to prevent render blocking -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
   <style>
     .proof-bar {
@@ -338,6 +346,6 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
