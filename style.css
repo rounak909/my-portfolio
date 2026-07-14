@@ -540,6 +540,33 @@ input::placeholder, textarea::placeholder { color: #9ca3af; }
   }
 }
 
+.cert-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1.1rem 1.2rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--glass);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.cert-badge i {
+  font-size: 1.4rem;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+.cert-badge span {
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--text);
+}
+@media (hover: hover) {
+  .cert-badge:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(69,231,255,.15);
+  }
+}
+
 /* ── WHATSAPP FLOAT ── */
 .whatsapp-float {
   position: fixed;
