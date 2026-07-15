@@ -1,0 +1,9 @@
+# Force HTTPS (redirect any HTTP request to HTTPS)
+http://rounakarora.online/*  https://rounakarora.online/:splat  301!
+
+# Force the .html versions as canonical (matches our canonical tags)
+# Redirects clean URLs (e.g. /about) to their .html versions, so Google stops splitting ranking signal between the two
+/about      /about.html      301!
+/services   /services.html   301!
+/contact    /contact.html    301!
+/results    /results.html    301!
