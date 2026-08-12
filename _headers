@@ -1,20 +1,108 @@
+# ============================================
+# GLOBAL SECURITY HEADERS (Applied to All Pages)
+# ============================================
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: upgrade-insecure-requests
+  X-DNS-Prefetch-Control: on
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Cross-Origin-Resource-Policy: same-site
 
+# ============================================
+# HTML PAGES — Short Cache (For Fresh Updates)
+# ============================================
 /*.html
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=3600, must-revalidate
 
+/
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# ============================================
+# CSS FILES — Long Cache (Rarely Changes)
+# ============================================
 /*.css
   Cache-Control: public, max-age=31536000, immutable
 
+# ============================================
+# JAVASCRIPT FILES — Long Cache
+# ============================================
 /*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# ============================================
+# IMAGES — Long Cache
+# ============================================
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.ico
   Cache-Control: public, max-age=31536000, immutable
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+
+# ============================================
+# FONTS — Long Cache
+# ============================================
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# ============================================
+# XML & TXT FILES — Medium Cache
+# ============================================
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+  Content-Type: application/xml
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain
+
+/llms.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain
+
+# ============================================
+# SPECIFIC PAGES — Extra Cache for Static Content
+# ============================================
+/about
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/services
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/contact
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/results
+  Cache-Control: public, max-age=3600, must-revalidate
