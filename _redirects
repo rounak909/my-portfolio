@@ -1,9 +1,17 @@
-# Force HTTPS (redirect any HTTP request to HTTPS)
-http://rounakarora.online/*  https://rounakarora.online/:splat  301!
+# ============================================
+# FORCE HTTPS (redirect all HTTP to HTTPS)
+# ============================================
+http://rounakarora.online/*         https://rounakarora.online/:splat    301!
+http://www.rounakarora.online/*     https://rounakarora.online/:splat    301!
+https://www.rounakarora.online/*    https://rounakarora.online/:splat    301!
 
-# Force the .html versions as canonical (matches our canonical tags)
-# Redirects clean URLs (e.g. /about) to their .html versions, so Google stops splitting ranking signal between the two
-/about      /about.html      301!
-/services   /services.html   301!
-/contact    /contact.html    301!
-/results    /results.html    301!
+# ============================================
+# REMOVE .html EXTENSION (Force Clean URLs)
+# .html versions ko clean URLs pe redirect karo
+# Ye canonical tags ke saath match karta hai
+# ============================================
+/index.html       /              301!
+/about.html       /about         301!
+/services.html    /services      301!
+/contact.html     /contact       301!
+/results.html     /results       301!
